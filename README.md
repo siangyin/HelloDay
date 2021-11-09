@@ -1,26 +1,36 @@
-# Project 2 (React)
+# Project 2: Hello Day
 
-## Hello Day
+## Description
 
-description: 
+description:
+Problem/ issues:
+Solution/ features:
 
-### sub
+### Demo Links
 
-....
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### User Stories
 
+...
 
-### sub
+## Technologies
 
-Launches the test runner in the interactive watch mode.\
+- React
+- Bootstrap
+- Axios
+- Firebase
+
+## Wireframes/ Designs
+
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-
 
 **Note: note here!**
 
 ....
 
-## sub
+## Process
+
+...
+
+## Challenges
 
 ...
