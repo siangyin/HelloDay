@@ -9,29 +9,29 @@ function Quote() {
 		return Math.floor(Math.random() * max);
 	}
 
-	const getQuote = async () => {
-		try {
-			const response = await axios.get(url);
-			const objArr = response.data;
-
-			setQuote(objArr[getRandomInt(objArr.length)]);
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
 	useEffect(() => {
-		getQuote();
-	}, []);
+		const fetchQuote = async () => {
+			try {
+				const response = await axios.get(url);
+				const objArr = response.data;
+				const randQuote = objArr[getRandomInt(objArr.length)];
+				setQuote(randQuote);
+					console.log(randQuote);
+			} catch (error) {
+				console.log(error);
+			}
+		
+		};
 
-	console.log("hi");
-	console.log(quote);
+		fetchQuote();
+	}, []);
 
 	return (
 		<div>
 			{quote === "" && <h2>loading...</h2>}
-			<p>{quote.text}</p>
-			<p>by {quote.author}</p>
+			<p>
+				{quote.text} by {quote.author}
+			</p>
 		</div>
 	);
 }
