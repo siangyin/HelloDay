@@ -16,11 +16,10 @@ function Quote() {
 				const objArr = response.data;
 				const randQuote = objArr[getRandomInt(objArr.length)];
 				setQuote(randQuote);
-					console.log(randQuote);
+				console.log(randQuote);
 			} catch (error) {
 				console.log(error);
 			}
-		
 		};
 
 		fetchQuote();
@@ -28,6 +27,7 @@ function Quote() {
 
 	return (
 		<div>
+			<h5>daily quote: </h5>
 			{quote === "" && <h2>loading...</h2>}
 			<p>
 				{quote.text} by {quote.author}
