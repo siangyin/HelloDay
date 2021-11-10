@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { preText } from "./data";
+import MoodTracker from "./MoodTracker";
 
 function Diary() {
 	const randomText = preText[Math.floor(Math.random() * preText.length)];
-
+	const [mood, setMood] = useState();
 	const today = new Date();
 	const [todayDiaryObj, setTodayDiaryObj] = useState({
 		date:
@@ -12,16 +13,16 @@ function Diary() {
 			(today.getMonth() + 1) +
 			"-" +
 			today.getDate(),
-		header: "",
-		text: "",
+		title: "",
+		story: "",
 		tag: [],
 	});
 
 	function handleChange(e) {
 		const name = e.target.name;
 		const value = e.target.value;
-
-		setTodayDiaryObj((prevState) => ({ ...prevState, [name]: value }));
+		const id = Date.now();
+		setTodayDiaryObj((prevState) => ({ ...prevState, [name]: value, id }));
 		console.log(todayDiaryObj);
 	}
 
@@ -37,13 +38,14 @@ function Diary() {
 				onChange={handleChange}
 			></input>
 			<br />
-			<label htmlFor="header">Header: </label>
+			<MoodTracker mood={mood} setMood={setMood} />
+			<label htmlFor="title">Title: </label>
 			<input
 				className="daily-input-form"
 				type="text"
-				id="header"
-				name="header"
-				value={todayDiaryObj.header}
+				id="title"
+				name="title"
+				value={todayDiaryObj.title}
 				onChange={handleChange}
 			></input>
 			<br />
@@ -57,14 +59,15 @@ function Diary() {
 				onChange={handleChange}
 			></input>
 			<br />
+
 			<textarea
 				className="daily-input-form"
-				id="text"
-				name="text"
+				id="story"
+				name="story"
 				rows="5"
-				cols="33"
+				cols="30"
 				placeholder={randomText}
-				value={todayDiaryObj.text}
+				value={todayDiaryObj.story}
 				onChange={handleChange}
 			></textarea>
 		</form>

@@ -16,7 +16,7 @@ function Quote() {
 				const objArr = response.data;
 				const randQuote = objArr[getRandomInt(objArr.length)];
 				setQuote(randQuote);
-				console.log(randQuote);
+				
 			} catch (error) {
 				console.log(error);
 			}

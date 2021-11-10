@@ -7,7 +7,6 @@ import Quote from "./components/Quote";
 import Diary from "./components/Diary";
 
 function App() {
-	
 	const [users, setUsers] = useState([]);
 	const usersCollectionRef = collection(db, "users");
 
@@ -22,7 +21,6 @@ function App() {
 		getUsers();
 	}, []);
 
-	console.log(users);
 	return (
 		<div className="App">
 			<h1>Hello Day</h1>

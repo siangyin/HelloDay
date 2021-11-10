@@ -6,43 +6,61 @@ import {
 	FaSadCry,
 	FaFrown,
 	FaMeh,
+	FaGrinHearts,
+	FaGrinTongue,
+	FaFlushed,
 } from "react-icons/fa";
 import React from "react";
 
 export const icons = [
 	{
+		id: 0,
+		label: "Lovely",
+		icon: <FaGrinHearts />,
+	},
+	{
 		id: 1,
-		label: "laugh",
+		label: "Amazing",
 		icon: <FaLaughBeam />,
 	},
 	{
 		id: 2,
-		label: "smile",
+		label: "Content",
 		icon: <FaSmile />,
 	},
 	{
 		id: 3,
-		label: "meh",
-		icon: <FaMeh />,
+		label: "Silly",
+		icon: <FaGrinTongue />,
 	},
 	{
 		id: 4,
-		label: "tired",
-		icon: <FaTired />,
+		label: "Neutral",
+		icon: <FaMeh />,
 	},
 	{
 		id: 5,
-		label: "frown",
-		icon: <FaFrown />,
+		label: "Embarassed",
+		icon: <FaFlushed />,
 	},
 	{
 		id: 6,
-		label: "sad",
-		icon: <FaSadCry />,
+		label: "Tired",
+		icon: <FaTired />,
 	},
 	{
 		id: 7,
-		label: "angry",
+		label: "Disappointed",
+		icon: <FaFrown />,
+	},
+	{
+		id: 8,
+		label: "Upset",
+		icon: <FaSadCry />,
+	},
+	{
+		id: 9,
+		label: "Frustrated",
 		icon: <FaAngry />,
 	},
 ];
