@@ -15,9 +15,7 @@ Solution/ features:
 ## Technologies
 
 - React
-- Bootstrap
 - Axios
-- Firebase
 
 ## Wireframes/ Designs
 
