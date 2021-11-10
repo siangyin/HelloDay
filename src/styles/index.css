@@ -7,15 +7,50 @@
 body {
 	font-family: "Nunito", "Fredoka One", Verdana, Tahoma, sans-serif;
 	font-weight: 400;
-	margin: 20px;
+	margin: 30px;
 }
 
 h1 {
 	font-family: "Black Ops One", cursive;
+	margin: 30px 20px 20px 0px;
 }
 
-.daily-input-form {
+.daily-form-input {
 	border: 2px solid lightskyblue;
 	background-color: lavenderblush;
 	color: lightslategray;
+	height: 2vh;
+	width: 60vw;
+	display: inline-flex;
+}
+
+.daily-form-label {
+	font-family: "Nunito", sans-serif;
+	height: 2vh;
+	width: 10vw;
+	text-align: left;
+}
+
+.daily-form-longinput {
+	border: 2px solid lightskyblue;
+	background-color: lavenderblush;
+	color: lightslategray;
+	height: 30vh;
+	width: 60vw;
+	display: inline-flex;
+}
+
+h4 {
+	margin-top: 10px;
+}
+
+span {
+	margin: 1px;
+}
+
+button {
+	margin: 5px;
+	background-color: lightslategrey;
+	height: 2vh;
+	width: 10vw;
 }

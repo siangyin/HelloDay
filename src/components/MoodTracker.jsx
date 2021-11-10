@@ -1,7 +1,7 @@
 import React from "react";
 import { icons } from "./data";
 
-const MoodTracker = ({ setMood, mood }) => {
+const MoodTracker = ({ setMood, mood, setTodayDiaryObj }) => {
 	return (
 		<div>
 			<h4>
@@ -12,6 +12,7 @@ const MoodTracker = ({ setMood, mood }) => {
 							key={icon.id}
 							onClick={() => {
 								setMood(icon);
+								setTodayDiaryObj((prevState) => ({ ...prevState, mood: icon }));
 							}}
 						>
 							{icon.icon}

@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { db } from "../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
+import React, { useState } from "react";
+//, useEffect
+// import { db } from "../firebase-config";
+// import { collection, getDocs } from "firebase/firestore";
 import { preText } from "./data";
 
 import Quote from "./Quote";
 import MoodTracker from "./MoodTracker";
 
+const randomText = preText[Math.floor(Math.random() * preText.length)];
+
 // Diary Component function
-const Diary = () => {
+const Diary = ({ setDailyDiary }) => {
 	// all variables & states...
-	const randomText = preText[Math.floor(Math.random() * preText.length)];
+
 	const today = new Date();
 
-	const [users, setUsers] = useState([]);
-	const usersCollectionRef = collection(db, "users");
+	// const [users, setUsers] = useState([]);
+	// const usersCollectionRef = collection(db, "users");
 
-	const [mood, setMood] = useState();
+	const [mood, setMood] = useState(null);
 	const [todayDiaryObj, setTodayDiaryObj] = useState({
 		date:
 			today.getFullYear() +
@@ -23,37 +26,50 @@ const Diary = () => {
 			(today.getMonth() + 1) +
 			"-" +
 			today.getDate(),
+		mood: mood,
 		title: "",
 		story: "",
 		tag: [],
 	});
 
-	useEffect(() => {
-		const getUsers = async () => {
-			const data = await getDocs(usersCollectionRef);
-			//getting back the users data and id
-			setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-			console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-		};
+	// useEffect(() => {
+	// 	const getUsers = async () => {
+	// 		const data = await getDocs(usersCollectionRef);
+	// 		//getting back the users data and id
+	// 		setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+	// 		console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+	// 	};
 
-		getUsers();
-	}, []);
+	// 	getUsers();
+	// }, []);
 
 	function handleChange(e) {
 		const name = e.target.name;
 		const value = e.target.value;
-		const id = Date.now();
-		setTodayDiaryObj((prevState) => ({ ...prevState, [name]: value, id }));
-		console.log(todayDiaryObj);
+
+		setTodayDiaryObj((prevState) => ({
+			...prevState,
+			[name]: value,
+			mood: mood,
+		}));
 	}
 
-	return (
-		<form className="form container">
-			<Quote />
+	// function handleSubmit
 
-			<label htmlFor="date">Date: </label>
+	return (
+		<form
+			className="form container"
+			onSubmit={(e) => {
+				e.preventDefault();
+				setDailyDiary(todayDiaryObj);
+			}}
+		>
+			<Quote />
+			<br />
+
+			<h4 className="daily-form-label">Date: </h4>
 			<input
-				className="daily-input-form"
+				className="daily-form-input"
 				type="date"
 				name="date"
 				value={todayDiaryObj.date}
@@ -61,10 +77,14 @@ const Diary = () => {
 			></input>
 			<br />
 
-			<MoodTracker mood={mood} setMood={setMood} />
-			<label htmlFor="title">Title: </label>
+			<MoodTracker
+				mood={mood}
+				setMood={setMood}
+				setTodayDiaryObj={setTodayDiaryObj}
+			/>
+			<h4 className="daily-form-label">Title: </h4>
 			<input
-				className="daily-input-form"
+				className="daily-form-input"
 				type="text"
 				name="title"
 				value={todayDiaryObj.title}
@@ -72,9 +92,9 @@ const Diary = () => {
 			></input>
 			<br />
 
-			<label htmlFor="tag">Tags: </label>
+			<h4 className="daily-form-label">Tags: </h4>
 			<input
-				className="daily-input-form"
+				className="daily-form-input"
 				type="tag"
 				name="tag"
 				value={todayDiaryObj.tag}
@@ -82,8 +102,9 @@ const Diary = () => {
 			></input>
 			<br />
 
+			<h4 className="daily-form-label">Diary: </h4>
 			<textarea
-				className="daily-input-form"
+				className="daily-form-longinput"
 				name="story"
 				rows="5"
 				cols="30"
@@ -91,6 +112,8 @@ const Diary = () => {
 				value={todayDiaryObj.story}
 				onChange={handleChange}
 			></textarea>
+
+			<button type="submit">Submit</button>
 		</form>
 	);
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import axios from "axios";
 
 const Quote = () => {
@@ -24,17 +24,10 @@ const Quote = () => {
 		fetchQuote();
 	}, []);
 
-	return (
-		<div className="daily-quote">
-			{quote === "" ? (
-				<h2>loading...</h2>
-			) : (
-				<p>
-					Quote of the day: {quote.text}...by {quote.author}
-				</p>
-			)}
-		</div>
-	);
+	if (quote === "") {
+		return "I am grateful for...";
+	}
+	return `Quote of the day: ${quote.text}...by ${quote.author}`;
 };
 
 export default Quote;
