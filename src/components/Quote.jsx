@@ -1,7 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-function Quote() {
+const Quote = () => {
 	const url = "https://type.fit/api/quotes";
 	const [quote, setQuote] = useState("");
 
@@ -16,7 +16,6 @@ function Quote() {
 				const objArr = response.data;
 				const randQuote = objArr[getRandomInt(objArr.length)];
 				setQuote(randQuote);
-				
 			} catch (error) {
 				console.log(error);
 			}
@@ -26,14 +25,16 @@ function Quote() {
 	}, []);
 
 	return (
-		<div>
-			<h5>daily quote: </h5>
-			{quote === "" && <h2>loading...</h2>}
-			<p>
-				{quote.text} by {quote.author}
-			</p>
+		<div className="daily-quote">
+			{quote === "" ? (
+				<h2>loading...</h2>
+			) : (
+				<p>
+					Quote of the day: {quote.text}...by {quote.author}
+				</p>
+			)}
 		</div>
 	);
-}
+};
 
 export default Quote;
