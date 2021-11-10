@@ -1,23 +1,43 @@
 # Project 2: Hello Day
 
-## Description
+## Pre-Project Planning
 
-description:
-Problem/ issues:
-Solution/ features:
+### Problem:
 
-### Demo Links
+- Having trouble turning daily planning into a reflexive habit?
+- Start many projects but have trouble finishing them?
+- Not being able to concentrate and maintain focus? 
+- Feel overloaded by work and have heightened feelings of stress and anxiety that’s affecting your mental well being?
+- Being busy instead of effective?
 
-### User Stories
+### Solution & Objective:
+
+A digital journaling application that help to keep track of your daily life. Simplifying your life, empty what's on your mind, allowing you to review and self reflecting on what can be done better. 
+
+- Support groups to motivate one, letting you know you are not alone.
+- Healthy lifestyle, tackle your bad habit and create better routine.
+- Time management and tracking system help to increase productivity
+- Self reflect, time to let go of what holding you back, understand ownself and explore your identity.
+
+## Project Development
+
+### Researches/ mood board
+
+### Ideas Structures:
+
+### Wireframe
 
 ...
 
-## Technologies
+## Project Implementation
 
+### Technologies
+- Javascript
+- CSS
 - React
 - Axios
 
-## Wireframes/ Designs
+## UI
 
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
@@ -25,10 +45,10 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ....
 
-## Process
+## Challenges/ Troubleshooting
 
 ...
 
-## Challenges
+## Further improvement
 
 ...
