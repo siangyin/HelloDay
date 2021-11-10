@@ -113,7 +113,7 @@ const Diary = ({ setDailyDiary }) => {
 				onChange={handleChange}
 			></textarea>
 
-			<button type="submit">Submit</button>
+			<button type="submit">Add</button>
 		</form>
 	);
 };

@@ -50,7 +50,9 @@ span {
 
 button {
 	margin: 5px;
-	background-color: lightslategrey;
+	background-color: lightskyblue;
 	height: 2vh;
 	width: 10vw;
+	position: absolute;
+	
 }
