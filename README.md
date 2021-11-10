@@ -21,9 +21,15 @@ A digital journaling application that help to keep track of your daily life. Sim
 
 ## Project Development
 
+...
+
 ### Researches/ mood board
 
+...
+
 ### Ideas Structures:
+
+...
 
 ### Wireframe
 
@@ -37,7 +43,7 @@ A digital journaling application that help to keep track of your daily life. Sim
 - React
 - Axios
 
-## UI
+### UI
 
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
