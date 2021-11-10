@@ -42,17 +42,22 @@ h1 {
 
 h4 {
 	margin-top: 10px;
+	color: lightskyblue;
 }
 
 span {
 	margin: 1px;
+	color: lightslategray;
 }
 
+span:hover {
+	color:lightskyblue;
+}
 button {
 	margin: 5px;
 	background-color: lightskyblue;
 	height: 2vh;
 	width: 10vw;
 	position: absolute;
-	
+	color: lavenderblush;
 }
