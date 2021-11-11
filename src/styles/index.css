@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Antic+Slab&family=Architects+Daughter&family=Balsamiq+Sans:wght@400;700&family=Black+Ops+One&family=Chela+One&family=Courgette&family=Fredoka+One&family=Great+Vibes&family=Lobster&family=Londrina+Solid:wght@100;300;400;900&family=Maven+Pro:wght@400;600;900&family=Nunito:ital,wght@0,200;0,700;0,900;1,400&family=Poppins&family=Quicksand&family=Raleway:ital@1&family=Righteous&family=Satisfy&family=Ubuntu:ital@1&display=swap");
+
 * {
 	padding: 0px;
 	margin: 0px;
@@ -10,9 +12,14 @@ body {
 	margin: 30px;
 }
 
-h1 {
-	font-family: "Black Ops One", cursive;
-	margin: 30px 20px 20px 0px;
+.logo-focus {
+	font-family: "Righteous", cursive;
+	font-weight: 900;
+}
+
+.logo-diary {
+	font-family: "Great Vibes", cursive;
+	font-weight: 100;
 }
 
 .daily-form-input {
@@ -51,7 +58,7 @@ span {
 }
 
 span:hover {
-	color:lightskyblue;
+	color: lightskyblue;
 }
 button {
 	margin: 5px;
