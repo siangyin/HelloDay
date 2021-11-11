@@ -4,7 +4,7 @@
 
 ## Pre-Project Planning
 
-### Problem:
+### Problems:
 
 - Having trouble turning daily planning into a reflexive habit?
 - Start many projects but have trouble finishing them or just unable to concentrate and maintain focus? 
@@ -13,7 +13,7 @@
 - Have a lot on minds, not sure where to start?
 - Wanted to saved down your good memories where you can easily be access to?
 
-### Solution & Objective:
+### Solutions & Objectives:
 
 A digital journaling application that help to keep track of your daily life. Simplifying your life, empty what's on your mind, allowing you to review and self reflecting on what can be done better. 
 
@@ -30,7 +30,7 @@ A digital journaling application that help to keep track of your daily life. Sim
 
 ...
 
-### Ideas Structures:
+### Ideas Structure:
 
 ...
 
