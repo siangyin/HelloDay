@@ -7,10 +7,11 @@
 ### Problem:
 
 - Having trouble turning daily planning into a reflexive habit?
-- Start many projects but have trouble finishing them?
-- Not being able to concentrate and maintain focus? 
+- Start many projects but have trouble finishing them or just unable to concentrate and maintain focus? 
 - Feel overloaded by work and have heightened feelings of stress and anxiety that’s affecting your mental well being?
 - Being busy instead of effective?
+- Have a lot on minds, not sure where to start?
+- Wanted to saved down your good memories where you can easily be access to?
 
 ### Solution & Objective:
 
@@ -19,7 +20,7 @@ A digital journaling application that help to keep track of your daily life. Sim
 - Support groups to motivate one, letting you know you are not alone.
 - Healthy lifestyle, tackle your bad habit and create better routine.
 - Time management and tracking system help to increase productivity
-- Self reflect, time to let go of what holding you back, understand ownself and explore your identity.
+- Self-reflect/ self-care, time to let go of what holding you back, understand ownself and explore your identity.
 
 ## Project Development
 
