@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-//, useEffect
+import { useState, useEffect } from "react";
+//
 // import { db } from "../firebase-config";
 // import { collection, getDocs } from "firebase/firestore";
 import { preText } from "./data";
@@ -64,6 +64,8 @@ const Diary = ({ setDailyDiary }) => {
 				setDailyDiary(todayDiaryObj);
 			}}
 		>
+			{/* {users[0] && <h4>{users[0].name}</h4>} */}
+
 			<Quote />
 			<br />
 
