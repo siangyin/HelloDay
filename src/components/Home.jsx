@@ -7,7 +7,7 @@ const Home = () => {
 			<h2>Homepage component</h2>
 
 			<div className="user-login">
-				<img src={image} style={{ width: "50vw" }}></img>
+				<img src={image} style={{ width: "50vw" }} alt="writingdiary"></img>
 				<form className="login-form-form">
 					<h4 className="login-form-label">Username: </h4>
 					<input
