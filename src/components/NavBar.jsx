@@ -9,7 +9,8 @@ const NavBar = () => {
 			</h1>
 			<div className="links">
 				<a href="/">Home</a>
-				<a href="/create">New Diary</a>
+				<a href="/alldiaries">All Diaries</a>
+				<a href="/newdiary">New Diary</a>
 			</div>
 		</nav>
 	);

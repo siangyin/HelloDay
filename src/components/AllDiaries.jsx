@@ -1,10 +1,9 @@
 import React from "react";
-import { sampleDiaryData } from "./data";
 
-const DiaryEntries = () => {
+const AllDiaries = ({ sampleDiaryData }) => {
 	return (
 		<div>
-			<h2>All Diary Entries</h2>
+			<h2>All Diaries list component</h2>
 			{sampleDiaryData.map((day) => {
 				return (
 					<div key={day.date} className="entries-list">
@@ -20,4 +19,4 @@ const DiaryEntries = () => {
 	);
 };
 
-export default DiaryEntries;
+export default AllDiaries;
