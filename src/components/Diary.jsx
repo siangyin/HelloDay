@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 //
-// import { db } from "../firebase-config";
+// import { db } from "../firebase/firebase-config";
 // import { collection, getDocs } from "firebase/firestore";
 import { preText } from "./data";
 
