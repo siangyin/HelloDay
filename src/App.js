@@ -2,17 +2,19 @@ import { useState } from "react";
 // , { useState, useEffect }
 import "./styles/App.css";
 import Diary from "./components/Diary";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
 
 const App = () => {
 	const [dailyDiary, setDailyDiary] = useState();
 	console.log(dailyDiary);
 	return (
 		<div className="App">
-			<h1 className="logo">
-				<span className="logo-focus">Focus</span>
-				<span className="logo-diary">Dairy</span>
-			</h1>
-			<Diary setDailyDiary={setDailyDiary} />
+			<NavBar />
+			<div className="content">
+				<Home />
+				<Diary setDailyDiary={setDailyDiary} />
+			</div>
 		</div>
 	);
 };

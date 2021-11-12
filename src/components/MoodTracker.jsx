@@ -8,8 +8,8 @@ const MoodTracker = ({ setMood, mood, setTodayDiaryObj }) => {
 				How's your day?{" "}
 				{icons.map((icon) => {
 					return (
-						<span
-							key={icon.id}
+						<span 
+							key={icon.id} className="mood-icon"
 							onClick={() => {
 								setMood(icon);
 								setTodayDiaryObj((prevState) => ({ ...prevState, mood: icon }));

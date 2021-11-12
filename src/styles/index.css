@@ -52,12 +52,12 @@ h4 {
 	color: lightskyblue;
 }
 
-span {
+.mood-icon {
 	margin: 1px;
 	color: lightslategray;
 }
 
-span:hover {
+.mood-icon:hover {
 	color: lightskyblue;
 }
 button {

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-//
+import { useState } from "react";
+// import { useEffect } from "react";
 // import { db } from "../firebase/firebase-config";
 // import { collection, getDocs } from "firebase/firestore";
 import { preText } from "./data";
@@ -15,9 +15,6 @@ const Diary = ({ setDailyDiary }) => {
 
 	const today = new Date();
 
-	// const [users, setUsers] = useState([]);
-	// const usersCollectionRef = collection(db, "users");
-
 	const [mood, setMood] = useState(null);
 	const [todayDiaryObj, setTodayDiaryObj] = useState({
 		date:
@@ -31,6 +28,10 @@ const Diary = ({ setDailyDiary }) => {
 		story: "",
 		tag: [],
 	});
+
+	//firebase
+	// const [users, setUsers] = useState([]);
+	// const usersCollectionRef = collection(db, "users");
 
 	// useEffect(() => {
 	// 	const getUsers = async () => {
