@@ -8,8 +8,8 @@ const AllDiaries = ({ diaries, handleDelete }) => {
 				return (
 					<div key={day.date} className="entries-list">
 						{day.mood.icon} <strong>{day.title}</strong>
-						{day.tag.map((tag) => (
-							<em key={tag.id}>{tag} </em>
+						{day.tag.map((tag, i) => (
+							<em key={i}>{tag} </em>
 						))}
 						<button
 							onClick={() => {
