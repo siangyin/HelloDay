@@ -11,9 +11,11 @@ const Quote = () => {
 	}
 
 	useEffect(() => {
+		const abortCont = new AbortController();
+
 		const fetchQuote = async () => {
 			try {
-				const response = await axios.get(url);
+				const response = await axios.get(url, { signal: abortCont.signal });
 				const objArr = response.data;
 				const randQuote = objArr[getRandomInt(objArr.length)];
 				setQuote(randQuote);
@@ -23,6 +25,10 @@ const Quote = () => {
 		};
 
 		fetchQuote();
+
+		return () => {
+			abortCont.abort();
+		};
 	}, []);
 
 	return (
