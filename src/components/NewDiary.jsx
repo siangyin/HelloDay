@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-// import { db } from "../firebase/firebase-config";
-// import { collection, getDocs } from "firebase/firestore";
+
 import { preText } from "../data/Data";
 
 import Quote from "./Quote";
@@ -46,20 +45,7 @@ const Diary = ({ setDailyDiary, diary }) => {
 		}
 	}, [diary, todayDiaryObj]);
 
-	//firebase
-	// const [users, setUsers] = useState([]);
-	// const usersCollectionRef = collection(db, "users");
 
-	// useEffect(() => {
-	// 	const getUsers = async () => {
-	// 		const data = await getDocs(usersCollectionRef);
-	// 		//getting back the users data and id
-	// 		setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-	// 		console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-	// 	};
-
-	// 	getUsers();
-	// }, []);
 
 	function handleChange(e) {
 		const name = e.target.name;
@@ -82,7 +68,7 @@ const Diary = ({ setDailyDiary, diary }) => {
 				setDailyDiary(todayDiaryObj);
 			}}
 		>
-			{/* {users[0] && <h4>{users[0].name}</h4>} */}
+
 
 			<Quote />
 			<br />

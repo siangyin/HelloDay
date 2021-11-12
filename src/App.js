@@ -6,8 +6,11 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import AllDiaries from "./components/AllDiaries";
 import { sampleDiaryData } from "./data/Data";
+// import useFetch from "./useFetch";
 
 const App = () => {
+	// const { users } = useFetch();
+
 	const [dailyDiary, setDailyDiary] = useState();
 	const [diaries, setDiaries] = useState(sampleDiaryData);
 	const [editing, setEditing] = useState({ status: false, data: null });
