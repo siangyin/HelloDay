@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 // import { db } from "../firebase/firebase-config";
 // import { collection, getDocs } from "firebase/firestore";
 import { preText } from "./data";
@@ -10,7 +10,7 @@ import MoodTracker from "./MoodTracker";
 const randomText = preText[Math.floor(Math.random() * preText.length)];
 
 // Diary Component function
-const Diary = ({ setDailyDiary }) => {
+const Diary = ({ setDailyDiary, diary }) => {
 	// all variables & states...
 
 	const today = new Date();
@@ -28,6 +28,14 @@ const Diary = ({ setDailyDiary }) => {
 		story: "",
 		tag: [],
 	});
+
+	// for editing, passing data
+	useEffect(() => {
+		if (diary) {
+			setTodayDiaryObj(diary);
+			setMood(diary.mood);
+		}
+	}, [diary]);
 
 	//firebase
 	// const [users, setUsers] = useState([]);

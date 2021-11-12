@@ -1,6 +1,6 @@
 import React from "react";
 
-const AllDiaries = ({ diaries, handleDelete }) => {
+const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 	return (
 		<div>
 			<h2>All Diaries list component</h2>
@@ -11,6 +11,13 @@ const AllDiaries = ({ diaries, handleDelete }) => {
 						{day.tag.map((tag, i) => (
 							<em key={i}>{tag} </em>
 						))}
+						<button
+							onClick={() => {
+								handleEdit(day.date);
+							}}
+						>
+							Edit
+						</button>
 						<button
 							onClick={() => {
 								handleDelete(day.date);

@@ -83,12 +83,7 @@ export const sampleDiaryData = [
 			icon: <FaSmile />,
 		},
 		title: "Relaxing day",
-		story: ` ✅ woke up 6 am,
-		✅ went to gym,
-		✅ grocery shopping,
-		✅ clean the house,
-		✅ DIY pizza
-		✅ chill and movie`,
+		story: ` ✅ woke up 6 am, ✅ went to gym, ✅ grocery shopping, ✅ clean the house, ✅ DIY pizza, ✅ chill and movie`,
 		tag: ["relax", "chill"],
 	},
 	{
