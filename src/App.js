@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import { useEffect } from "react";
 import "./styles/App.css";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Diary from "./components/NewDiary";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -41,23 +42,45 @@ const App = () => {
 	// }, []);
 
 	return (
-		<div className="App">
-			<NavBar />
-			<div className="content">
-				<Home />
-				<AllDiaries
-					diaries={diaries}
-					handleDelete={handleDelete}
-					handleEdit={handleEdit}
-				/>
+		<Router>
+			<div className="App">
+				<NavBar />
+				<div className="content">
+					<Routes>
+						<Route exact path="/" element={<Home />} />
+						<Route
+							exact
+							path="alldiaries"
+							element={
+								<AllDiaries
+									diaries={diaries}
+									handleDelete={handleDelete}
+									handleEdit={handleEdit}
+								/>
+							}
+						/>
+						<Route
+							exact
+							path="newdiary"
+							element={<Diary setDailyDiary={setDailyDiary} />}
+						/>
 
-				{editing.status && (
-					<Diary setDailyDiary={setDailyDiary} diary={editing.data} />
-				)}
-
-				<Diary setDailyDiary={setDailyDiary} />
+						<Route
+							exact
+							path="editdiary"
+							element={
+								editing.status && (
+									<Diary setDailyDiary={setDailyDiary} diary={editing.data} />
+								)
+							}
+						/>
+					</Routes>
+					{editing.status && (
+						<Diary setDailyDiary={setDailyDiary} diary={editing.data} />
+					)}
+				</div>
 			</div>
-		</div>
+		</Router>
 	);
 };
 
