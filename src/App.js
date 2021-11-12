@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 // , { useState, useEffect }
 import "./styles/App.css";
 import Diary from "./components/Diary";
