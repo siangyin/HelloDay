@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-// , { useState,  }
+import { useState } from "react";
+// import { useEffect } from "react";
 import "./styles/App.css";
 import Diary from "./components/NewDiary";
 import NavBar from "./components/NavBar";
@@ -10,7 +10,9 @@ import { sampleDiaryData } from "./components/data";
 const App = () => {
 	const [dailyDiary, setDailyDiary] = useState();
 	const [diaries, setDiaries] = useState(sampleDiaryData);
-	const [editing, setEditing] = useState({ status: false, data: {} });
+	const [editing, setEditing] = useState({ status: false, data: null });
+
+	// form submitted data
 	console.log(dailyDiary);
 
 	function handleDelete(id) {
@@ -20,9 +22,20 @@ const App = () => {
 
 	function handleEdit(id) {
 		const newdata = diaries.filter((diary) => diary.date === id);
-		console.log(newdata);
-		setEditing({ status: true, data: newdata });
+		setEditing({ status: true, data: newdata[0] });
+		//data to edit & retrieved
+		console.log(editing.data);
 	}
+
+	// not working, trying to update data.
+	// useEffect(() => {
+	// 	console.log("diary changed");
+	// 	console.log(dailyDiary);
+	// 	if (dailyDiary) {
+	// 		const index = diaries.findIndex((e) => e.date === dailyDiary.date);
+	// 		console.log(index);
+	// 	}
+	// }, []);
 
 	return (
 		<div className="App">
@@ -35,7 +48,9 @@ const App = () => {
 					handleEdit={handleEdit}
 				/>
 
-				<Diary diary={sampleDiaryData[1]} />
+				{editing.status && (
+					<Diary setDailyDiary={setDailyDiary} diary={editing.data} />
+				)}
 
 				<Diary setDailyDiary={setDailyDiary} />
 			</div>
