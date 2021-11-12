@@ -5,7 +5,7 @@ import Diary from "./components/NewDiary";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import AllDiaries from "./components/AllDiaries";
-import { sampleDiaryData } from "./components/data";
+import { sampleDiaryData } from "./data/Data";
 
 const App = () => {
 	const [dailyDiary, setDailyDiary] = useState();

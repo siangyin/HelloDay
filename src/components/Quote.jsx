@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
 
 const Quote = () => {
 	const url = "https://type.fit/api/quotes";
@@ -28,10 +29,13 @@ const Quote = () => {
 		<>
 			{quote === "" && <h4>loading...</h4>}
 			<h4>Quote of the day: </h4>
+
 			{quote && (
-				<p>
+				<div className="dailyQuote">
+					<FaQuoteLeft />
 					{quote.text}...by {quote.author}
-				</p>
+					<FaQuoteRight />
+				</div>
 			)}
 		</>
 	);

@@ -1,5 +1,5 @@
 import React from "react";
-import { icons } from "./data";
+import { icons } from "../data/Data";
 
 const MoodTracker = ({ setMood, mood, setTodayDiaryObj }) => {
 	return (

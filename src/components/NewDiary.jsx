@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 // import { db } from "../firebase/firebase-config";
 // import { collection, getDocs } from "firebase/firestore";
-import { preText } from "./data";
+import { preText } from "../data/Data";
 
 import Quote from "./Quote";
 import MoodTracker from "./MoodTracker";
@@ -15,6 +15,7 @@ const Diary = ({ setDailyDiary, diary }) => {
 
 	const today = new Date();
 
+	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
 	const [mood, setMood] = useState(null);
 	const [todayDiaryObj, setTodayDiaryObj] = useState({
 		date:
@@ -35,7 +36,15 @@ const Diary = ({ setDailyDiary, diary }) => {
 			setTodayDiaryObj(diary);
 			setMood(diary.mood);
 		}
-	}, [diary]);
+
+		if (
+			(todayDiaryObj.date && todayDiaryObj.mood) ||
+			(todayDiaryObj.date && todayDiaryObj.title && todayDiaryObj.story)
+		) {
+			setIsDisableSubmitBtn(false);
+			console.log("ok");
+		}
+	}, [diary, todayDiaryObj]);
 
 	//firebase
 	// const [users, setUsers] = useState([]);
@@ -123,8 +132,13 @@ const Diary = ({ setDailyDiary, diary }) => {
 				value={todayDiaryObj.story}
 				onChange={handleChange}
 			></textarea>
-
-			<button type="submit">Add</button>
+			{isDisableSubmitBtn ? (
+				<button type="submit" disabled>
+					Add
+				</button>
+			) : (
+				<button type="submit">Add</button>
+			)}
 		</form>
 	);
 };
