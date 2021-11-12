@@ -9,7 +9,10 @@ const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 				return (
 					<div key={day.date} className="entries-list">
 						<Link to={`/diary/${day.date}`}>
-							{day.mood.icon} <strong>{day.title}</strong>
+							{day.mood.icon}{" "}
+							<strong>
+								{day.date} : {day.title} >
+							</strong>
 							{day.tag.map((tag, i) => (
 								<em key={i}>{tag} </em>
 							))}
