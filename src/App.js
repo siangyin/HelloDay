@@ -67,7 +67,7 @@ const App = () => {
 
 						<Route
 							exact
-							path="editdiary"
+							path="diary/:id"
 							element={
 								editing.status && (
 									<Diary setDailyDiary={setDailyDiary} diary={editing.data} />

@@ -1,17 +1,18 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { preText } from "../data/Data";
 
 import Quote from "./Quote";
 import MoodTracker from "./MoodTracker";
+import { useParams } from "react-router-dom";
 
 const randomText = preText[Math.floor(Math.random() * preText.length)];
 
 // Diary Component function
 const Diary = ({ setDailyDiary, diary }) => {
 	// all variables & states...
-
+	const { id } = useParams();
+	console.log(id);
 	const today = new Date();
 
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
@@ -45,8 +46,6 @@ const Diary = ({ setDailyDiary, diary }) => {
 		}
 	}, [diary, todayDiaryObj]);
 
-
-
 	function handleChange(e) {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -68,8 +67,6 @@ const Diary = ({ setDailyDiary, diary }) => {
 				setDailyDiary(todayDiaryObj);
 			}}
 		>
-
-
 			<Quote />
 			<br />
 
