@@ -9,47 +9,105 @@
 body {
 	font-family: "Nunito", "Fredoka One", Verdana, Tahoma, sans-serif;
 	font-weight: 400;
-	margin: 30px;
+	/* margin: 30px; */
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	border-bottom: 1px solid #073b4c;
+}
+
+.navbar h1 {
+	color: #ef476f;
+}
+
+.navbar .links {
+	margin-left: auto;
+}
+
+.navbar a {
+	margin-left: 16px;
+	text-decoration: none;
+	padding: 6px;
+	color: #073b4c;
+}
+
+.navbar a:hover {
+	color: #ef476f;
 }
 
 .logo-focus {
 	font-family: "Righteous", cursive;
 	font-weight: 900;
+	color: #073b4c;
 }
 
 .logo-diary {
 	font-family: "Great Vibes", cursive;
 	font-weight: 100;
+	color: #15ade0;
 }
 
-.daily-form-input {
-	border: 2px solid lightskyblue;
-	background-color: lavenderblush;
-	color: lightslategray;
-	height: 2vh;
-	width: 60vw;
+.content {
+	max-width: 600px;
+	margin: 40px auto;
+	padding: 20px;
+}
+
+.user-login {
 	display: inline-flex;
 }
 
-.daily-form-label {
+.login-form-form {
+	margin-top: 30%;
+}
+
+.diary-form-label {
 	font-family: "Nunito", sans-serif;
 	height: 2vh;
 	width: 10vw;
 	text-align: left;
 }
 
-.daily-form-longinput {
+.diary-form-input {
+	border: 2px solid lightskyblue;
+	background-color: lavenderblush;
+	color: lightslategray;
+	height: 2vh;
+	width: 60vw;
+	display: inline-flex;
+	margin-bottom: 5px;
+}
+
+.login-form-label {
+	font-family: "Nunito", sans-serif;
+	height: 2vh;
+	width: 10vw;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.login-form-input {
+	border: 2px solid lightskyblue;
+	background-color: lavenderblush;
+	color: lightslategray;
+	height: 2vh;
+	width: 20vw;
+	display: inline-flex;
+	margin-bottom: 5px;
+}
+
+.diary-form-longinput {
 	border: 2px solid lightskyblue;
 	background-color: lavenderblush;
 	color: lightslategray;
 	height: 30vh;
 	width: 60vw;
 	display: inline-flex;
-}
-
-h4 {
-	margin-top: 10px;
-	color: lightskyblue;
 }
 
 .mood-icon {
@@ -60,11 +118,11 @@ h4 {
 .mood-icon:hover {
 	color: lightskyblue;
 }
+
 button {
-	margin: 5px;
 	background-color: lightskyblue;
-	height: 2vh;
+	height: 3vh;
 	width: 10vw;
-	position: absolute;
+	position: relative;
 	color: lavenderblush;
 }

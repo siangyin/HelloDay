@@ -70,9 +70,9 @@ const Diary = ({ setDailyDiary }) => {
 			<Quote />
 			<br />
 
-			<h4 className="daily-form-label">Date: </h4>
+			<h4 className="diary-form-label">Date: </h4>
 			<input
-				className="daily-form-input"
+				className="diary-form-input"
 				type="date"
 				name="date"
 				value={todayDiaryObj.date}
@@ -85,9 +85,9 @@ const Diary = ({ setDailyDiary }) => {
 				setMood={setMood}
 				setTodayDiaryObj={setTodayDiaryObj}
 			/>
-			<h4 className="daily-form-label">Title: </h4>
+			<h4 className="diary-form-label">Title: </h4>
 			<input
-				className="daily-form-input"
+				className="diary-form-input"
 				type="text"
 				name="title"
 				value={todayDiaryObj.title}
@@ -95,9 +95,9 @@ const Diary = ({ setDailyDiary }) => {
 			></input>
 			<br />
 
-			<h4 className="daily-form-label">Tags: </h4>
+			<h4 className="diary-form-label">Tags: </h4>
 			<input
-				className="daily-form-input"
+				className="diary-form-input"
 				type="tag"
 				name="tag"
 				value={todayDiaryObj.tag}
@@ -105,9 +105,9 @@ const Diary = ({ setDailyDiary }) => {
 			></input>
 			<br />
 
-			<h4 className="daily-form-label">Diary: </h4>
+			<h4 className="diary-form-label">Diary: </h4>
 			<textarea
-				className="daily-form-longinput"
+				className="diary-form-longinput"
 				name="story"
 				rows="5"
 				cols="30"

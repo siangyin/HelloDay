@@ -5,12 +5,11 @@ const NavBar = () => {
 		<nav className="navbar">
 			<h1 className="logo">
 				<span className="logo-focus">Focus</span>
-				<span className="logo-diary">Dairy</span>
+				<span className="logo-diary">Diary</span>
 			</h1>
 			<div className="links">
 				<a href="/">Home</a>
 				<a href="/create">New Diary</a>
-	
 			</div>
 		</nav>
 	);
