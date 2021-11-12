@@ -4,6 +4,7 @@ import "./styles/App.css";
 import Diary from "./components/Diary";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import DiaryEntries from "./components/DiaryEntries";
 
 const App = () => {
 	const [dailyDiary, setDailyDiary] = useState();
@@ -13,6 +14,7 @@ const App = () => {
 			<NavBar />
 			<div className="content">
 				<Home />
+				<DiaryEntries />
 				<Diary setDailyDiary={setDailyDiary} />
 			</div>
 		</div>
