@@ -137,3 +137,8 @@ textarea:focus {
 	outline: none;
 	border: 2px solid #ef476f;
 }
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
