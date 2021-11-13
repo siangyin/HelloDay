@@ -15,6 +15,7 @@ const App = () => {
 	const [dailyDiary, setDailyDiary] = useState();
 	const [diaries, setDiaries] = useState(sampleDiaryData);
 	const [editing, setEditing] = useState({ status: false, data: null });
+	// const [userLoginStatus, setUserLoginStatus] = useState(true);
 
 	// form submitted data
 	console.log(dailyDiary);

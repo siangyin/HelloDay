@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Acme&family=Antic+Slab&family=Architects+Daughter&family=Balsamiq+Sans:wght@400;700&family=Black+Ops+One&family=Chela+One&family=Courgette&family=Fredoka+One&family=Great+Vibes&family=Lobster&family=Londrina+Solid:wght@100;300;400;900&family=Maven+Pro:wght@400;600;900&family=Nunito:ital,wght@0,200;0,700;0,900;1,400&family=Poppins&family=Quicksand&family=Raleway:ital@1&family=Righteous&family=Satisfy&family=Ubuntu:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Righteous&family=Satisfy&display=swap");
 
 * {
 	padding: 0px;
@@ -42,7 +42,6 @@ body {
 
 .logo-focus {
 	font-family: "Righteous", cursive;
-	font-weight: 900;
 	color: #073b4c;
 }
 

@@ -42,7 +42,7 @@ const Home = () => {
 			alert(`Sorry, something wrong! ${err.slice(start, end + 1)}`);
 		}
 	}
-
+	console.log(currentUser);
 	return (
 		<div className="home">
 			<h2>Homepage component</h2>
@@ -58,7 +58,6 @@ const Home = () => {
 						name="email"
 					></input>
 					<br />
-
 					<h4 className="login-form-label">Password: </h4>
 					<input
 						className="login-form-input"
@@ -67,19 +66,23 @@ const Home = () => {
 						name="password"
 					></input>
 					<br />
+					{currentUser ? (
+						<button type="button" onClick={handleLogOut}>
+							Log out
+						</button>
+					) : (
+						<button type="button" onClick={handleLogIn}>
+							Log in
+						</button>
+					)}
 
-					<button type="button" onClick={handleLogIn}>
-						Log in
-					</button>
-					<button type="button" onClick={handleSignUp} disabled={currentUser}>
-						Sign up
-					</button>
-
-					<button type="button" onClick={handleLogOut} disabled={!currentUser}>
-						Log out
-					</button>
-
-					{currentUser && <p>{currentUser.email} is logged in</p>}
+					{currentUser ? (
+						<p>{currentUser.email} is logged in</p>
+					) : (
+						<button type="button" onClick={handleSignUp}>
+							Sign up
+						</button>
+					)}
 				</form>
 			</div>
 		</div>
