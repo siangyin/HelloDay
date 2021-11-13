@@ -2,42 +2,40 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { db } from "./firebase/firebase-config";
-import { collection, onSnapshot } from "firebase/firestore";
+import {
+	collection,
+	onSnapshot,
+	setDoc,
+	addDoc,
+	doc,
+} from "firebase/firestore";
+// import { getDocs } from "firebase/firestore";
 
 import Diary from "./components/NewDiary";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import AllDiaries from "./components/AllDiaries";
-// import { sampleDiaryData } from "./data/Data";
-// import useFetch from "./useFetch";
 
 const App = () => {
-	// const { diaries } = useFetch();
-
 	const [dailyDiary, setDailyDiary] = useState();
 	const [diaryEntries, setDiaryEntries] = useState([]);
 	const [editing, setEditing] = useState({ status: false, data: null });
 	// const [userLoginStatus, setUserLoginStatus] = useState(true);
 
-	// console.log(diaries);
-	// console.log(sampleDiaryData);
-
 	// form submitted data
 	// console.log(dailyDiary);
 	console.log(diaryEntries);
-	//fetch
-	useEffect(
-		() =>
-			onSnapshot(collection(db, "diaries"), (snapshot) => {
-				const data = snapshot.docs.map((doc) => ({
-					...doc.data(),
-					id: doc.id,
-				}));
-				setDiaryEntries(data);
-			}),
 
-		[]
-	);
+	function getToDate() {
+		const today = new Date();
+		const date =
+			today.getFullYear() +
+			"-" +
+			(today.getMonth() + 1) +
+			"-" +
+			today.getDate();
+		return date;
+	}
 
 	function handleDelete(id) {
 		const newdata = diaryEntries.filter((diary) => diary.date !== id);
@@ -51,15 +49,42 @@ const App = () => {
 		console.log(editing.data);
 	}
 
-	// not working, trying to update data.
-	useEffect(() => {
-		console.log("diary changed");
-		console.log(dailyDiary);
-		if (dailyDiary) {
-			const index = diaryEntries.findIndex((e) => e.date === dailyDiary.date);
-			console.log(index);
-		}
-	}, [dailyDiary]);
+	// async function handleNewEntry() {
+	// 	//// with setDoc to replace the data if id existed
+	// 	const docRef = doc(db, "diaries", getToDate());
+	// 	const payload = await dailyDiary;
+	// 	console.log(docRef);
+	// 	console.log(payload);
+	// 	console.log(dailyDiary);
+	// 	console.log(diaryEntries);
+	// 	await setDoc(docRef, payload);
+	// }
+
+	//fetch Firebase Database
+	useEffect(
+		() =>
+			onSnapshot(collection(db, "diaries"), (snapshot) => {
+				const data = snapshot.docs.map((doc) => ({
+					...doc.data(),
+					id: doc.id,
+				}));
+				setDiaryEntries(data);
+			}),
+		[]
+	);
+
+	// TBC get index of the data, try to replace diary entry (for editing)
+	// useEffect(() => {
+	// 	console.log("diary changed");
+	// 	console.log(dailyDiary);
+	// 	if (dailyDiary) {
+	// 		const index = diaryEntries.findIndex((e) => e.date === dailyDiary.date);
+	// 		console.log(index);
+	// 	}
+	// }, [dailyDiary]);
+
+	// console.log
+	// console.log(diaries);
 
 	return (
 		<Router>
@@ -82,7 +107,12 @@ const App = () => {
 						<Route
 							exact
 							path="newdiary"
-							element={<Diary setDailyDiary={setDailyDiary} />}
+							element={
+								<Diary
+									setDailyDiary={setDailyDiary}
+									handleNewEntry={handleNewEntry}
+								/>
+							}
 						/>
 
 						<Route

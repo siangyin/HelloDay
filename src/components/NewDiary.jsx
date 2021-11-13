@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 const randomText = preText[Math.floor(Math.random() * preText.length)];
 
 // Diary Component function
-const Diary = ({ setDailyDiary, diary }) => {
+const Diary = ({ setDailyDiary, diary, handleNewEntry }) => {
 	// all variables & states...
 	const { id } = useParams();
 	console.log(id);
@@ -65,6 +65,7 @@ const Diary = ({ setDailyDiary, diary }) => {
 			onSubmit={(e) => {
 				e.preventDefault();
 				setDailyDiary(todayDiaryObj);
+				handleNewEntry(todayDiaryObj);
 			}}
 		>
 			<Quote />
