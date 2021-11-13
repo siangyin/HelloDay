@@ -23,7 +23,7 @@ const App = () => {
 	// const [userLoginStatus, setUserLoginStatus] = useState(true);
 
 	// form submitted data
-	// console.log(dailyDiary);
+	console.log(dailyDiary);
 	console.log(diaryEntries);
 
 	function getToDate() {
@@ -49,16 +49,17 @@ const App = () => {
 		console.log(editing.data);
 	}
 
-	// async function handleNewEntry() {
-	// 	//// with setDoc to replace the data if id existed
-	// 	const docRef = doc(db, "diaries", getToDate());
-	// 	const payload = await dailyDiary;
-	// 	console.log(docRef);
-	// 	console.log(payload);
-	// 	console.log(dailyDiary);
-	// 	console.log(diaryEntries);
-	// 	await setDoc(docRef, payload);
-	// }
+	async function handleNewEntry(obj) {
+		//// with setDoc to replace the data if id existed
+		// const docRef = doc(db, "diaries", getToDate());
+		// const payload = await obj;
+		// console.log(docRef);
+		// console.log(payload);
+		console.log(obj);
+		console.log(dailyDiary);
+		console.log(diaryEntries);
+		// await setDoc(docRef, payload);
+	}
 
 	//fetch Firebase Database
 	useEffect(
