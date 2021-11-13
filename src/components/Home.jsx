@@ -1,13 +1,46 @@
 import { useRef } from "react";
 import image from "../images/writingdiary.svg";
-import { signUp } from "../firebase/firebase-config";
+import { signUp, useAuth, logOut, logIn } from "../firebase/firebase-config";
 
 const Home = () => {
 	const emailRef = useRef();
 	const passwordRef = useRef();
+	const currentUser = useAuth();
 
 	async function handleSignUp() {
-		await signUp(emailRef.current.value, passwordRef.current.value);
+		try {
+			await signUp(emailRef.current.value, passwordRef.current.value);
+		} catch (error) {
+			const err = error.message;
+			let start = err.indexOf("(");
+			let end = err.indexOf(")");
+			console.log(error.message);
+			alert(`Sorry, something wrong! ${err.slice(start, end + 1)}`);
+		}
+	}
+
+	async function handleLogIn() {
+		try {
+			await logIn(emailRef.current.value, passwordRef.current.value);
+		} catch (error) {
+			const err = error.message;
+			let start = err.indexOf("(");
+			let end = err.indexOf(")");
+			console.log(error.message);
+			alert(`Sorry, something wrong! ${err.slice(start, end + 1)}`);
+		}
+	}
+
+	async function handleLogOut() {
+		try {
+			await logOut();
+		} catch (error) {
+			const err = error.message;
+			let start = err.indexOf("(");
+			let end = err.indexOf(")");
+			console.log(error.message);
+			alert(`Sorry, something wrong! ${err.slice(start, end + 1)}`);
+		}
 	}
 
 	return (
@@ -35,12 +68,18 @@ const Home = () => {
 					></input>
 					<br />
 
-					<button type="button" onClick={handleSignUp}>
+					<button type="button" onClick={handleLogIn}>
 						Log in
 					</button>
-					<button type="button" onClick={handleSignUp}>
+					<button type="button" onClick={handleSignUp} disabled={currentUser}>
 						Sign up
 					</button>
+
+					<button type="button" onClick={handleLogOut} disabled={!currentUser}>
+						Log out
+					</button>
+
+					{currentUser && <p>{currentUser.email} is logged in</p>}
 				</form>
 			</div>
 		</div>
