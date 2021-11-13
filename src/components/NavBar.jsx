@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { signUp, useAuth, logOut, logIn } from "../firebase/firebase-config";
+import { useAuth } from "../firebase/firebase-config";
+// , logOut
 
 const NavBar = () => {
 	const currentUser = useAuth();
 
-	console.log(currentUser);
 	return (
 		<nav className="navbar">
 			<h1 className="logo">
@@ -15,7 +15,7 @@ const NavBar = () => {
 			<div className="links">
 				<Link to="/alldiaries">All Diaries</Link>
 				<Link to="/newdiary">New Diary</Link>
-				<Link to="/">{currentUser? "Log out" : "Log in"}</Link>
+				<Link to="/">{currentUser ? "Log out" : "Log in"}</Link>
 			</div>
 		</nav>
 	);

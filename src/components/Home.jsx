@@ -42,7 +42,7 @@ const Home = () => {
 			alert(`Sorry, something wrong! ${err.slice(start, end + 1)}`);
 		}
 	}
-	console.log(currentUser);
+
 	return (
 		<div className="home">
 			<img src={image} style={{ width: "50vw" }} alt="writingdiary"></img>

@@ -7,13 +7,13 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import AllDiaries from "./components/AllDiaries";
 import { sampleDiaryData } from "./data/Data";
-// import useFetch from "./useFetch";
+import useFetch from "./useFetch";
 
 const App = () => {
-	// const { users } = useFetch();
+	const { diaries } = useFetch();
 
 	const [dailyDiary, setDailyDiary] = useState();
-	const [diaries, setDiaries] = useState(sampleDiaryData);
+	const [diariesEntries, setDiariesEntries] = useState(sampleDiaryData);
 	const [editing, setEditing] = useState({ status: false, data: null });
 	// const [userLoginStatus, setUserLoginStatus] = useState(true);
 
@@ -21,12 +21,12 @@ const App = () => {
 	console.log(dailyDiary);
 
 	function handleDelete(id) {
-		const newdata = diaries.filter((diary) => diary.date !== id);
-		setDiaries(newdata);
+		const newdata = diariesEntries.filter((diary) => diary.date !== id);
+		setDiariesEntries(newdata);
 	}
 
 	function handleEdit(id) {
-		const newdata = diaries.filter((diary) => diary.date === id);
+		const newdata = diariesEntries.filter((diary) => diary.date === id);
 		setEditing({ status: true, data: newdata[0] });
 		//data to edit & retrieved
 		console.log(editing.data);
@@ -37,7 +37,7 @@ const App = () => {
 	// 	console.log("diary changed");
 	// 	console.log(dailyDiary);
 	// 	if (dailyDiary) {
-	// 		const index = diaries.findIndex((e) => e.date === dailyDiary.date);
+	// 		const index = diariesEntries.findIndex((e) => e.date === dailyDiary.date);
 	// 		console.log(index);
 	// 	}
 	// }, []);
@@ -54,7 +54,7 @@ const App = () => {
 							path="alldiaries"
 							element={
 								<AllDiaries
-									diaries={diaries}
+									diaries={diariesEntries}
 									handleDelete={handleDelete}
 									handleEdit={handleEdit}
 								/>
