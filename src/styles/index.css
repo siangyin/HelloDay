@@ -125,6 +125,7 @@ button {
 	width: 10vw;
 	position: relative;
 	color: #ebebeb;
+	margin-right: 5px;
 }
 
 button:disabled {
