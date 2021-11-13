@@ -5,17 +5,19 @@ const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 	return (
 		<div>
 			<h2>All Diaries list component</h2>
-			{diaries.map((day) => {
-				return (
-					<div key={day.date} className="entries-list">
-						<Link to={`/diary/${day.date}`}>
-							{day.mood.icon}{" "}
-							<strong>
-								{day.date} : {day.title} >
-							</strong>
-							{day.tag.map((tag, i) => (
-								<em key={i}>{tag} </em>
-							))}
+			<ul>
+				{diaries.map((day) => {
+					return (
+						<li key={day.id} className="entries-list">
+							<Link to={`/diary/${day.date}`}>
+								{day.mood.icon}
+								<strong>
+									{day.date} : {day.title} >
+								</strong>
+								{day.tag.map((tag, i) => (
+									<em key={i}>{tag} </em>
+								))}{" "}
+							</Link>
 							<button
 								onClick={() => {
 									handleEdit(day.date);
@@ -30,10 +32,10 @@ const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 							>
 								delete
 							</button>
-						</Link>
-					</div>
-				);
-			})}
+						</li>
+					);
+				})}
+			</ul>
 		</div>
 	);
 };
