@@ -45,45 +45,44 @@ const Home = () => {
 	console.log(currentUser);
 	return (
 		<div className="home">
-			<h2>Homepage component</h2>
-
+			<img src={image} style={{ width: "50vw" }} alt="writingdiary"></img>
 			<div className="user-login">
-				<img src={image} style={{ width: "50vw" }} alt="writingdiary"></img>
-				<form className="login-form-form">
-					<h4 className="login-form-label">Email: </h4>
-					<input
-						className="login-form-input"
-						ref={emailRef}
-						type="email"
-						name="email"
-					></input>
-					<br />
-					<h4 className="login-form-label">Password: </h4>
-					<input
-						className="login-form-input"
-						ref={passwordRef}
-						type="password"
-						name="password"
-					></input>
-					<br />
-					{currentUser ? (
-						<button type="button" onClick={handleLogOut}>
-							Log out
-						</button>
-					) : (
-						<button type="button" onClick={handleLogIn}>
-							Log in
-						</button>
-					)}
+				{!currentUser && (
+					<section className="login-form-form">
+						<h4 className="login-form-label">Email: </h4>
+						<input
+							className="login-form-input"
+							ref={emailRef}
+							type="email"
+							name="email"
+						></input>
+						<br />
+						<h4 className="login-form-label">Password: </h4>
+						<input
+							className="login-form-input"
+							ref={passwordRef}
+							type="password"
+							name="password"
+						></input>
+					</section>
+				)}
+				{currentUser ? (
+					<button type="button" onClick={handleLogOut}>
+						Log out
+					</button>
+				) : (
+					<button type="button" onClick={handleLogIn}>
+						Log in
+					</button>
+				)}
 
-					{currentUser ? (
-						<p>{currentUser.email} is logged in</p>
-					) : (
-						<button type="button" onClick={handleSignUp}>
-							Sign up
-						</button>
-					)}
-				</form>
+				{currentUser ? (
+					<p>{currentUser.email} is logged in</p>
+				) : (
+					<button type="button" onClick={handleSignUp}>
+						Sign up
+					</button>
+				)}
 			</div>
 		</div>
 	);
