@@ -29,12 +29,9 @@ const NavBar = () => {
 						<span className="logo-focus">Focus</span>
 						<span className="logo-diary">Diary</span>
 					</h2>
-					<button
-						className="nav-toggle"
-						onClick={() => setShowLinks(!showLinks)}
-					>
+					<div className="nav-toggle" onClick={() => setShowLinks(!showLinks)}>
 						<FaBars />
-					</button>
+					</div>
 				</div>
 
 				<div className="links-container" ref={linksContainerRef}>

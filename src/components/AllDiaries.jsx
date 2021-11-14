@@ -10,7 +10,7 @@ const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 					return (
 						<li key={day.id} className="entries-list">
 							<Link to={`/diary/${day.date}`}>
-								{day.mood.icon}
+							
 								<strong>
 									{day.date} : {day.title} >
 								</strong>
