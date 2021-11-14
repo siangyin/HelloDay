@@ -9,10 +9,10 @@ import { useParams } from "react-router-dom";
 const randomText = preText[Math.floor(Math.random() * preText.length)];
 
 // Diary Component function
-const Diary = ({ setDailyDiary, diary, handleNewEntry }) => {
+const Diary = ({ setDailyDiary, diary }) => {
 	// all variables & states...
 	const { id } = useParams();
-	console.log(id);
+	console.log("useParam ID:", id);
 	const today = new Date();
 
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
@@ -65,7 +65,7 @@ const Diary = ({ setDailyDiary, diary, handleNewEntry }) => {
 			onSubmit={(e) => {
 				e.preventDefault();
 				setDailyDiary(todayDiaryObj);
-				handleNewEntry(todayDiaryObj);
+				localStorage.setItem(todayDiaryObj.date, JSON.stringify(todayDiaryObj));
 			}}
 		>
 			<Quote />
@@ -85,6 +85,7 @@ const Diary = ({ setDailyDiary, diary, handleNewEntry }) => {
 				mood={mood}
 				setMood={setMood}
 				setTodayDiaryObj={setTodayDiaryObj}
+				todayDiaryObj={todayDiaryObj}
 			/>
 			<h4 className="diary-form-label">Title: </h4>
 			<input

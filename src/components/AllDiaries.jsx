@@ -8,15 +8,11 @@ const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 			<ul>
 				{diaries.map((day) => {
 					return (
-						<li key={day.id} className="entries-list">
+						<li key={day.date} className="entries-list">
 							<Link to={`/diary/${day.date}`}>
-							
 								<strong>
-									{day.date} : {day.title} >
+									{day.date} : {day.title}
 								</strong>
-								{day.tag.map((tag, i) => (
-									<em key={i}>{tag} </em>
-								))}{" "}
 							</Link>
 							<button
 								onClick={() => {

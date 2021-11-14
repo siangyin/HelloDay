@@ -1,16 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { db } from "./firebase/firebase-config";
-import {
-	collection,
-	onSnapshot,
-	setDoc,
-	addDoc,
-	doc,
-} from "firebase/firestore";
-// import { getDocs } from "firebase/firestore";
-
 import Diary from "./components/NewDiary";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -23,19 +13,20 @@ const App = () => {
 	// const [userLoginStatus, setUserLoginStatus] = useState(true);
 
 	// form submitted data
-	console.log(dailyDiary);
-	console.log(diaryEntries);
+	console.log("dailyDiary:", dailyDiary);
+	console.log("diaryEntries:", diaryEntries);
 
-	function getToDate() {
-		const today = new Date();
-		const date =
-			today.getFullYear() +
-			"-" +
-			(today.getMonth() + 1) +
-			"-" +
-			today.getDate();
-		return date;
-	}
+	// get today date
+	// function getToDate() {
+	// 	const today = new Date();
+	// 	const date =
+	// 		today.getFullYear() +
+	// 		"-" +
+	// 		(today.getMonth() + 1) +
+	// 		"-" +
+	// 		today.getDate();
+	// 	return date;
+	// }
 
 	function handleDelete(id) {
 		const newdata = diaryEntries.filter((diary) => diary.date !== id);
@@ -49,40 +40,36 @@ const App = () => {
 		console.log(editing.data);
 	}
 
-	async function handleNewEntry(obj) {
-		//// with setDoc to replace the data if id existed
-		// const docRef = doc(db, "diaries", getToDate());
-		// const payload = await obj;
-		// console.log(docRef);
-		// console.log(payload);
-		console.log(obj);
-		console.log(dailyDiary);
-		console.log(diaryEntries);
-		// await setDoc(docRef, payload);
-	}
-
-	//fetch Firebase Database
-	useEffect(
-		() =>
-			onSnapshot(collection(db, "diaries"), (snapshot) => {
-				const data = snapshot.docs.map((doc) => ({
-					...doc.data(),
-					id: doc.id,
-				}));
-				setDiaryEntries(data);
-			}),
-		[]
-	);
-
 	// TBC get index of the data, try to replace diary entry (for editing)
-	// useEffect(() => {
-	// 	console.log("diary changed");
-	// 	console.log(dailyDiary);
-	// 	if (dailyDiary) {
-	// 		const index = diaryEntries.findIndex((e) => e.date === dailyDiary.date);
-	// 		console.log(index);
-	// 	}
-	// }, [dailyDiary]);
+	useEffect(() => {
+		// local storage
+		function retrievingLocalStorage() {
+			const dateKeys = Object.keys(localStorage);
+			let localdb = [];
+
+			for (const obj of dateKeys) {
+				localdb.push(JSON.parse(localStorage.getItem(obj)));
+			}
+
+			console.log(
+				localdb.sort((a, b) => {
+					return new Date(b.date) - new Date(a.date);
+				})
+			);
+
+			setDiaryEntries(localdb);
+			return localdb;
+		}
+
+		retrievingLocalStorage();
+		console.log("diary changed", dailyDiary);
+		console.log("diaries entries", diaryEntries);
+
+		if (dailyDiary) {
+			const index = diaryEntries.findIndex((e) => e.date === dailyDiary.date);
+			console.log(index);
+		}
+	}, [dailyDiary]);
 
 	// console.log
 	// console.log(diaries);
@@ -108,12 +95,7 @@ const App = () => {
 						<Route
 							exact
 							path="newdiary"
-							element={
-								<Diary
-									setDailyDiary={setDailyDiary}
-									handleNewEntry={handleNewEntry}
-								/>
-							}
+							element={<Diary setDailyDiary={setDailyDiary} />}
 						/>
 
 						<Route
