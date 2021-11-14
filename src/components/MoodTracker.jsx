@@ -1,11 +1,11 @@
 import React from "react";
 import { icons } from "../data/Data";
 
-const MoodTracker = ({ setMood, mood, setTodayDiaryObj, todayDiaryObj }) => {
+const MoodTracker = ({ setMood, mood, setTodayDiaryObj }) => {
 	return (
 		<div>
 			<h4>
-				How's your day?{" "}
+				How's your day?
 				{icons.map((icon) => {
 					return (
 						<span

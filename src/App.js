@@ -10,7 +10,7 @@ import NewDiary from "./components/NewDiary";
 const App = () => {
 	const [dailyDiary, setDailyDiary] = useState();
 	const [diaryEntries, setDiaryEntries] = useState([]);
-	const [editing, setEditing] = useState({ status: false, data: null });
+	const [editing, setEditing] = useState();
 	// const [userLoginStatus, setUserLoginStatus] = useState(true);
 
 	// form submitted data
@@ -35,10 +35,8 @@ const App = () => {
 	}
 
 	function handleEdit(id) {
-		const newdata = diaryEntries.filter((diary) => diary.date === id);
-		setEditing({ status: true, data: newdata[0] });
-		//data to edit & retrieved
-		console.log(editing.data);
+		const i = diaryEntries.findIndex((diary) => diary.date === id);
+		setEditing(i);
 	}
 
 	// TBC get index of the data, try to replace diary entry (for editing)
@@ -103,7 +101,10 @@ const App = () => {
 							exact
 							path="diary/:id"
 							element={
-								<Diary setDailyDiary={setDailyDiary} diary={editing.data} />
+								<Diary
+									setDailyDiary={setDailyDiary}
+									diary={diaryEntries[editing]}
+								/>
 							}
 						/>
 					</Routes>
