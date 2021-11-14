@@ -9,33 +9,18 @@ import { useParams } from "react-router-dom";
 const randomText = preText[Math.floor(Math.random() * preText.length)];
 
 // Diary Component function
-const NewDiary = ({ setDailyDiary, diary }) => {
+const Diary = ({ setDailyDiary, diary }) => {
 	// all variables & states...
 	const { id } = useParams();
 	console.log("useParam ID:", id);
 	const today = new Date();
 
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
-	const [mood, setMood] = useState(null);
-	const [todayDiaryObj, setTodayDiaryObj] = useState({
-		date:
-			today.getFullYear() +
-			"-" +
-			(today.getMonth() + 1) +
-			"-" +
-			today.getDate(),
-		mood: mood,
-		title: "",
-		story: "",
-		tag: [],
-	});
+	const [mood, setMood] = useState(diary.mood);
+	const [todayDiaryObj, setTodayDiaryObj] = useState(diary);
 
 	// for editing, passing data
 	useEffect(() => {
-		if (diary) {
-			setTodayDiaryObj(diary);
-			setMood(diary.mood);
-		}
 
 		if (
 			(todayDiaryObj.date && todayDiaryObj.mood) ||
@@ -113,8 +98,7 @@ const NewDiary = ({ setDailyDiary, diary }) => {
 				name="story"
 				rows="5"
 				cols="30"
-				placeholder={randomText}
-				value={todayDiaryObj.story}
+				placeholder={todayDiaryObj.story}
 				onChange={handleChange}
 			></textarea>
 			{isDisableSubmitBtn ? (
@@ -128,4 +112,4 @@ const NewDiary = ({ setDailyDiary, diary }) => {
 	);
 };
 
-export default NewDiary;
+export default Diary;

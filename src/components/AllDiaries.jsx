@@ -9,18 +9,16 @@ const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 				{diaries.map((day) => {
 					return (
 						<li key={day.date} className="entries-list">
-							<Link to={`/diary/${day.date}`}>
-								<strong>
-									{day.date} : {day.title}
-								</strong>
-							</Link>
-							<button
+							<Link
+								to={`/diary/${day.date}`}
 								onClick={() => {
 									handleEdit(day.date);
 								}}
 							>
-								Edit
-							</button>
+								<strong>
+									{day.date} : {day.title}
+								</strong>
+							</Link>
 							<button
 								onClick={() => {
 									handleDelete(day.date);

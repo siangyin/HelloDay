@@ -5,6 +5,7 @@ import Diary from "./components/NewDiary";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import AllDiaries from "./components/AllDiaries";
+import NewDiary from "./components/NewDiary";
 
 const App = () => {
 	const [dailyDiary, setDailyDiary] = useState();
@@ -95,22 +96,17 @@ const App = () => {
 						<Route
 							exact
 							path="newdiary"
-							element={<Diary setDailyDiary={setDailyDiary} />}
+							element={<NewDiary setDailyDiary={setDailyDiary} />}
 						/>
 
 						<Route
 							exact
 							path="diary/:id"
 							element={
-								editing.status && (
-									<Diary setDailyDiary={setDailyDiary} diary={editing.data} />
-								)
+								<Diary setDailyDiary={setDailyDiary} diary={editing.data} />
 							}
 						/>
 					</Routes>
-					{editing.status && (
-						<Diary setDailyDiary={setDailyDiary} diary={editing.data} />
-					)}
 				</div>
 			</div>
 		</Router>
