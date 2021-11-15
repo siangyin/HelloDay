@@ -15,6 +15,7 @@ const Diary = ({ setDailyDiary, diary }) => {
 	console.log("useParam ID:", id);
 	const today = new Date();
 	console.log(diary);
+	console.log(JSON.parse(window.localStorage.getItem(id)));
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
 	const [mood, setMood] = useState(diary.mood);
 	const [todayDiaryObj, setTodayDiaryObj] = useState(diary);

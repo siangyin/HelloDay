@@ -11,12 +11,13 @@ const App = () => {
 	const [dailyDiary, setDailyDiary] = useState();
 	const [diaryEntries, setDiaryEntries] = useState([]);
 	const [editing, setEditing] = useState();
+	const [datedEditing, setDatedEditing] = useState();
 	// const [userLoginStatus, setUserLoginStatus] = useState(true);
 
 	// form submitted data
 	console.log("dailyDiary:", dailyDiary);
 	console.log("diaryEntries:", diaryEntries);
-
+	console.log("datedEditing:", datedEditing);
 	// get today date
 	// function getToDate() {
 	// 	const today = new Date();
@@ -35,6 +36,7 @@ const App = () => {
 	}
 
 	function handleEdit(id) {
+		setDatedEditing(id);
 		const i = diaryEntries.findIndex((diary) => diary.date === id);
 		setEditing(i);
 	}
@@ -50,19 +52,15 @@ const App = () => {
 				localdb.push(JSON.parse(localStorage.getItem(obj)));
 			}
 
-			console.log(
-				localdb.sort((a, b) => {
-					return new Date(b.date) - new Date(a.date);
-				})
-			);
+			localdb = localdb.sort((a, b) => {
+				return new Date(b.date) - new Date(a.date);
+			});
 
 			setDiaryEntries(localdb);
 			return localdb;
 		}
 
 		retrievingLocalStorage();
-		console.log("diary changed", dailyDiary);
-		console.log("diaries entries", diaryEntries);
 
 		if (dailyDiary) {
 			const index = diaryEntries.findIndex((e) => e.date === dailyDiary.date);
@@ -104,6 +102,7 @@ const App = () => {
 								<Diary
 									setDailyDiary={setDailyDiary}
 									diary={diaryEntries[editing]}
+									datedEditing={datedEditing}
 								/>
 							}
 						/>

@@ -11,11 +11,11 @@ const randomText = preText[Math.floor(Math.random() * preText.length)];
 // Diary Component function
 const NewDiary = ({ setDailyDiary }) => {
 	// all variables & states...
-	const { id } = useParams();
-	console.log("useParam ID:", id);
+	// const { id } = useParams();
+	// console.log("useParam ID:", id);
 	const today = new Date();
 	const [tagsList, setTagsList] = useState();
-	console.log(tagsList);
+
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
 	const [mood, setMood] = useState(null);
 	const [todayDiaryObj, setTodayDiaryObj] = useState({
@@ -37,7 +37,7 @@ const NewDiary = ({ setDailyDiary }) => {
 		let newTagArr = tags.filter(function (item) {
 			return !todayDiaryObj.tag.includes(item);
 		});
-		console.log(newTagArr);
+		// console.log(newTagArr);
 		setTagsList(newTagArr);
 
 		if (
@@ -60,6 +60,8 @@ const NewDiary = ({ setDailyDiary }) => {
 		}));
 	}
 
+	// all console.log
+	// console.log(tagsList);
 	// function handleSubmit
 
 	return (
