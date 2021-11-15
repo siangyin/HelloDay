@@ -1,5 +1,5 @@
 import React from "react";
-import { icons } from "../data/Data";
+import { icons } from "../Helper/Data";
 
 const MoodTracker = ({ setMood, mood, setTodayDiaryObj }) => {
 	return (
@@ -27,7 +27,9 @@ const MoodTracker = ({ setMood, mood, setTodayDiaryObj }) => {
 
 			{mood && (
 				<h4>
-					Mood of the day : {icons[mood].icon} feeling {icons[mood].label}
+					Mood of the day :
+					<span className="mood-icon active">{icons[mood].icon}</span>
+					{`Feeling ${icons[mood].label}`}
 				</h4>
 			)}
 		</div>

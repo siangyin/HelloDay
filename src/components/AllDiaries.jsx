@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { icons } from "../Helper/Data";
 
 const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 	return (
@@ -9,14 +10,15 @@ const AllDiaries = ({ diaries, handleDelete, handleEdit }) => {
 				{diaries.map((day) => {
 					return (
 						<li key={day.date} className="entries-list">
-							<Link to={`/diary/${day.date}`} onClick={() => {
-										handleEdit(day.date);
-									}}>
+							<Link
+								to={`/diary/${day.date}`}
+								onClick={() => {
+									handleEdit(day.date);
+								}}
+							>
 								<strong>
-									{day.date} : {day.title}
+									{day.date} : {day.title || `Feeling ${icons[day.mood].label}`}
 								</strong>
-
-								
 							</Link>
 							<button
 								onClick={() => {

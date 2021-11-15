@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Diary from "./components/NewDiary";
+import Diary from "./components/Diary";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import AllDiaries from "./components/AllDiaries";

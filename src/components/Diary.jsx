@@ -1,21 +1,18 @@
 import { useState, useEffect } from "react";
 
-import { preText } from "../data/Data";
-
 import Quote from "./Quote";
 import MoodTracker from "./MoodTracker";
+import { tags } from "../Helper/Data";
 import { useParams } from "react-router-dom";
-
-const randomText = preText[Math.floor(Math.random() * preText.length)];
 
 // Diary Component function
 const Diary = ({ setDailyDiary, diary }) => {
 	// all variables & states...
+
 	const { id } = useParams();
-	console.log("useParam ID:", id);
-	const today = new Date();
-	console.log(diary);
+	//retrieving local storage diary by key:date
 	console.log(JSON.parse(window.localStorage.getItem(id)));
+	const [tagsList, setTagsList] = useState(tags);
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
 	const [mood, setMood] = useState(diary.mood);
 	const [todayDiaryObj, setTodayDiaryObj] = useState(diary);
@@ -27,9 +24,8 @@ const Diary = ({ setDailyDiary, diary }) => {
 			(todayDiaryObj.date && todayDiaryObj.title && todayDiaryObj.story)
 		) {
 			setIsDisableSubmitBtn(false);
-			console.log("ok");
 		}
-	}, [diary, todayDiaryObj]);
+	}, [todayDiaryObj]);
 
 	function handleChange(e) {
 		const name = e.target.name;
@@ -41,8 +37,6 @@ const Diary = ({ setDailyDiary, diary }) => {
 			mood: mood,
 		}));
 	}
-
-	// function handleSubmit
 
 	return (
 		<form
@@ -58,6 +52,7 @@ const Diary = ({ setDailyDiary, diary }) => {
 
 			<h4 className="diary-form-label">Date: </h4>
 			<input
+				required
 				className="diary-form-input"
 				type="date"
 				name="date"

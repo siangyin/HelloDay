@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
 
-import { preText, tags } from "../data/Data";
-
 import Quote from "./Quote";
 import MoodTracker from "./MoodTracker";
-import { useParams } from "react-router-dom";
+import { preText, tags } from "../Helper/Data";
+import TagsDropdown from "./TagsDropdown";
 
 const randomText = preText[Math.floor(Math.random() * preText.length)];
 
 // Diary Component function
 const NewDiary = ({ setDailyDiary }) => {
 	// all variables & states...
-	// const { id } = useParams();
-	// console.log("useParam ID:", id);
+
 	const today = new Date();
-	const [tagsList, setTagsList] = useState();
+	const [tagsList, setTagsList] = useState(tags);
 
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
 	const [mood, setMood] = useState(null);
@@ -33,19 +31,11 @@ const NewDiary = ({ setDailyDiary }) => {
 
 	// for editing, passing data
 	useEffect(() => {
-		// revising tags list (to remove selected tags for map)
-		let newTagArr = tags.filter(function (item) {
-			return !todayDiaryObj.tag.includes(item);
-		});
-		// console.log(newTagArr);
-		setTagsList(newTagArr);
-
 		if (
 			(todayDiaryObj.date && todayDiaryObj.mood) ||
 			(todayDiaryObj.date && todayDiaryObj.title && todayDiaryObj.story)
 		) {
 			setIsDisableSubmitBtn(false);
-			console.log("ok");
 		}
 	}, [todayDiaryObj]);
 
@@ -60,9 +50,30 @@ const NewDiary = ({ setDailyDiary }) => {
 		}));
 	}
 
-	// all console.log
-	// console.log(tagsList);
-	// function handleSubmit
+	function handleTagsAdding(obj) {
+		todayDiaryObj.tag.push(obj);
+		// revising tags list (to remove selected tags for map)
+		let newTagArr = tags.filter(function (item) {
+			return !todayDiaryObj.tag.includes(item);
+		});
+
+		setTagsList(newTagArr);
+	}
+
+	function handleTagsRemoving(obj) {
+		tagsList.push(obj);
+		const sortList = tagsList.sort((a, b) => {
+			return a.label - b.label;
+		});
+
+		setTagsList(sortList);
+
+		let newTagArr = todayDiaryObj.tag.filter((item) => item.id !== obj.id);
+		setTodayDiaryObj((prevState) => ({
+			...prevState,
+			tag: newTagArr,
+		}));
+	}
 
 	return (
 		<form
@@ -76,7 +87,7 @@ const NewDiary = ({ setDailyDiary }) => {
 			<Quote />
 			<br />
 
-			<h4 className="diary-form-label">Date: </h4>
+			<label className="diary-form-label">Date: </label>
 			<input
 				className="diary-form-input"
 				type="date"
@@ -92,7 +103,7 @@ const NewDiary = ({ setDailyDiary }) => {
 				setTodayDiaryObj={setTodayDiaryObj}
 				todayDiaryObj={todayDiaryObj}
 			/>
-			<h4 className="diary-form-label">Title: </h4>
+			<label className="diary-form-label">Title: </label>
 			<input
 				className="diary-form-input"
 				type="text"
@@ -101,39 +112,19 @@ const NewDiary = ({ setDailyDiary }) => {
 				onChange={handleChange}
 			></input>
 			<br />
-
-			<h4 className="diary-form-label">
+			<TagsDropdown tagsList={tagsList} clickHandler={handleTagsAdding} />
+			<label className="diary-form-label">
 				Tags:
-				{todayDiaryObj.tag &&
-					todayDiaryObj.tag.map((tag) => {
-						<span className="tag">{tag}</span>;
-					})}
-			</h4>
-			<select name="tags" multiple>
-				{tagsList &&
-					tagsList.map((item, i) => {
-						<option
-							key={i}
-							value={item}
-							onDoubleClick={(e) => {
-								todayDiaryObj.tag.push(e.target.value);
-								console.log(todayDiaryObj.tag);
-							}}
-						>
-							{item}
-						</option>;
-					})}
-			</select>
-			<input
-				className="diary-form-input"
-				type="tag"
-				name="tag"
-				value={todayDiaryObj.tag}
-				onChange={handleChange}
-			></input>
-			<br />
+				{todayDiaryObj.tag && (
+					<TagsDropdown
+						classTag="active"
+						tagsList={todayDiaryObj.tag}
+						clickHandler={handleTagsRemoving}
+					/>
+				)}
+			</label>
 
-			<h4 className="diary-form-label">Diary: </h4>
+			<label className="diary-form-label">Diary: </label>
 			<textarea
 				className="diary-form-longinput"
 				name="story"
