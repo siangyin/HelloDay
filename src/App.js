@@ -71,7 +71,7 @@ const App = () => {
 	}, [dailyDiary]);
 
 	// console.log
-	// console.log(diaries);
+	console.log(diaryEntries[editing]);
 
 	return (
 		<Router>

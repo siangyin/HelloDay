@@ -14,14 +14,13 @@ const Diary = ({ setDailyDiary, diary }) => {
 	const { id } = useParams();
 	console.log("useParam ID:", id);
 	const today = new Date();
-
+	console.log(diary);
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
 	const [mood, setMood] = useState(diary.mood);
 	const [todayDiaryObj, setTodayDiaryObj] = useState(diary);
 
 	// for editing, passing data
 	useEffect(() => {
-
 		if (
 			(todayDiaryObj.date && todayDiaryObj.mood) ||
 			(todayDiaryObj.date && todayDiaryObj.title && todayDiaryObj.story)
