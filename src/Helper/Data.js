@@ -10,9 +10,37 @@ import {
 	FaGrinTongue,
 	FaFlushed,
 } from "react-icons/fa";
-import React from "react";
 
-export const icons = [
+// DataArr: preText
+// DataObj: tags, moodIcons
+
+export const preText = [
+	"I am grateful for...",
+	"3 amazing things that happened today",
+	"What did I achieve today?",
+	"What lessons did I learn?",
+	"How could I have made today better?",
+	"Wins and Challenges of the Day",
+];
+
+export const tags = [
+	{ id: 0, label: "family" },
+	{ id: 1, label: "friend" },
+	{ id: 2, label: "love" },
+	{ id: 3, label: "social" },
+	{ id: 4, label: "self-care" },
+	{ id: 5, label: "movie" },
+	{ id: 6, label: "meditation" },
+	{ id: 7, label: "work" },
+	{ id: 8, label: "habit" },
+	{ id: 9, label: "happiness" },
+	{ id: 10, label: "health" },
+	{ id: 11, label: "home" },
+	{ id: 12, label: "fitness" },
+	{ id: 13, label: "finance" },
+];
+
+export const moodIcons = [
 	{
 		id: 0,
 		label: "Lovely",
@@ -63,30 +91,4 @@ export const icons = [
 		label: "Frustrated",
 		icon: <FaAngry />,
 	},
-];
-
-export const preText = [
-	"I am grateful for...",
-	"3 amazing things that happened today",
-	"What did I achieve today?",
-	"What lessons did I learn?",
-	"How could I have made today better?",
-	"Wins and Challenges of the Day",
-];
-
-export const tags = [
-	{ id: 0, label: "family" },
-	{ id: 1, label: "friend" },
-	{ id: 2, label: "love" },
-	{ id: 3, label: "social" },
-	{ id: 4, label: "self-care" },
-	{ id: 5, label: "movie" },
-	{ id: 6, label: "meditation" },
-	{ id: 7, label: "work" },
-	{ id: 8, label: "habit" },
-	{ id: 9, label: "happiness" },
-	{ id: 10, label: "health" },
-	{ id: 11, label: "home" },
-	{ id: 12, label: "fitness" },
-	{ id: 13, label: "finance" },
 ];

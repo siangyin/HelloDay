@@ -1,34 +1,21 @@
+import "./styles/app.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Diary from "./components/Diary";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import AllDiaries from "./components/AllDiaries";
-import NewDiary from "./components/NewDiary";
+import Home from "./pages/Home";
+import AllDiaries from "./pages/AllDiaries";
+import Diary from "./pages/Diary";
+import NewDiary from "./pages/NewDiary";
 
-const App = () => {
+export default function App() {
 	const [dailyDiary, setDailyDiary] = useState();
 	const [diaryEntries, setDiaryEntries] = useState([]);
 	const [editing, setEditing] = useState();
 	const [datedEditing, setDatedEditing] = useState();
 	// const [userLoginStatus, setUserLoginStatus] = useState(true);
 
-	// form submitted data
-	console.log("dailyDiary:", dailyDiary);
-	console.log("diaryEntries:", diaryEntries);
-	console.log("datedEditing:", datedEditing);
-	// get today date
-	// function getToDate() {
-	// 	const today = new Date();
-	// 	const date =
-	// 		today.getFullYear() +
-	// 		"-" +
-	// 		(today.getMonth() + 1) +
-	// 		"-" +
-	// 		today.getDate();
-	// 	return date;
-	// }
+	// functions handler
 
 	function handleDelete(id) {
 		const newdata = diaryEntries.filter((diary) => diary.date !== id);
@@ -41,7 +28,6 @@ const App = () => {
 		setEditing(i);
 	}
 
-	// TBC get index of the data, try to replace diary entry (for editing)
 	useEffect(() => {
 		// local storage
 		function retrievingLocalStorage() {
@@ -68,7 +54,11 @@ const App = () => {
 		}
 	}, [dailyDiary]);
 
-	// console.log
+	// console.logsssssssssssssssss
+
+	console.log("dailyDiary:", dailyDiary);
+	console.log("diaryEntries:", diaryEntries);
+	console.log("datedEditing:", datedEditing);
 	console.log(diaryEntries[editing]);
 
 	return (
@@ -111,6 +101,4 @@ const App = () => {
 			</div>
 		</Router>
 	);
-};
-
-export default App;
+}

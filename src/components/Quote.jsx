@@ -1,50 +1,13 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import { FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
+import "../styles/quote.css";
+import React from "react";
 
-const Quote = () => {
-	const url = "https://type.fit/api/quotes";
-	const [quote, setQuote] = useState("");
-
-	function getRandomInt(max) {
-		return Math.floor(Math.random() * max);
-	}
-
-	useEffect(() => {
-		const abortCont = new AbortController();
-
-		const fetchQuote = async () => {
-			try {
-				const response = await axios.get(url, { signal: abortCont.signal });
-				const objArr = response.data;
-				const randQuote = objArr[getRandomInt(objArr.length)];
-				setQuote(randQuote);
-			} catch (error) {
-				console.log(error);
-			}
-		};
-
-		fetchQuote();
-
-		return () => {
-			abortCont.abort();
-		};
-	}, []);
-
+export default function Quote({ quote }) {
 	return (
-		<>
-			{quote === "" && <h4>loading...</h4>}
-			<h4>Quote of the day: </h4>
-
-			{quote && (
-				<div className="dailyQuote">
-					<FaQuoteLeft />
-					{quote.text}...by {quote.author}
-					<FaQuoteRight />
-				</div>
-			)}
-		</>
+		<div className="dailyQuote">
+			<FaQuoteLeft />
+			{quote.text}...by {quote.author}
+			<FaQuoteRight />
+		</div>
 	);
-};
-
-export default Quote;
+}

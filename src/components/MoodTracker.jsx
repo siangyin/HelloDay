@@ -1,39 +1,40 @@
-import React from "react";
-import { icons } from "../Helper/Data";
+import { moodIcons } from "../helper/Data";
 
-const MoodTracker = ({ setMood, mood, setTodayDiaryObj }) => {
+export default function MoodTracker({ setMood, mood, setTodayDiaryObj }) {
+	const listing = moodIcons.map((icon) => {
+		return (
+			<span
+				key={icon.id}
+				className="mood-icon"
+				onClick={() => {
+					setMood(icon.id);
+					setTodayDiaryObj((prevState) => ({
+						...prevState,
+						mood: icon.id,
+					}));
+				}}
+			>
+				{icon.icon}
+			</span>
+		);
+	});
+
+	if (mood) {
+		return (
+			<div className="mood-tracker">
+				<p>
+					Mood of the day:
+					<span className="mood-icon active">{moodIcons[mood].icon}</span>
+					<span>{moodIcons[mood].label}</span>
+				</p>
+				{listing}
+			</div>
+		);
+	}
 	return (
-		<div>
-			<h4>
-				How's your day?
-				{icons.map((icon) => {
-					return (
-						<span
-							key={icon.id}
-							className="mood-icon"
-							onClick={() => {
-								setMood(icon.id);
-								setTodayDiaryObj((prevState) => ({
-									...prevState,
-									mood: icon.id,
-								}));
-							}}
-						>
-							{icon.icon}
-						</span>
-					);
-				})}
-			</h4>
-
-			{mood && (
-				<h4>
-					Mood of the day :
-					<span className="mood-icon active">{icons[mood].icon}</span>
-					{`Feeling ${icons[mood].label}`}
-				</h4>
-			)}
+		<div className="mood-tracker">
+			<h4>Mood of the day:</h4>
+			{listing}
 		</div>
 	);
-};
-
-export default MoodTracker;
+}

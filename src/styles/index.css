@@ -1,18 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Righteous&family=Satisfy&display=swap");
 
+/*
+=============== 
+Global Styles
+===============
+*/
+
+/* Removing default style */
+
 * {
-	padding: 0px;
-	margin: 0px;
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 }
 
 body {
-	font-family: "Nunito", "Fredoka One", Verdana, Tahoma, sans-serif;
+	font-family: "Nunito", "Fredoka One", Verdana, Tahoma, -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+		"Open Sans", "Helvetica Neue", sans-serif;
 	line-height: 1.5;
 	font-size: 0.875rem;
 }
-
-/* Removing default style */
 
 ul {
 	list-style-type: none;
@@ -23,15 +31,11 @@ a {
 	text-decoration: none;
 }
 
-button {
-	background: transparent;
-	box-shadow: 0px 0px 0px transparent;
-	border: 0px solid transparent;
-	text-shadow: 0px 0px 0px transparent;
-}
+/* button, input and textarea */
+/* ============================== */
 
-button:hover {
-	background: transparent;
+button,
+input {
 	box-shadow: 0px 0px 0px transparent;
 	border: 0px solid transparent;
 	text-shadow: 0px 0px 0px transparent;
@@ -46,6 +50,16 @@ button:focus {
 	outline: 0;
 }
 
+button:disabled {
+	cursor: not-allowed;
+}
+
+input:focus,
+textarea:focus {
+	outline: none;
+	background-color: transparent;
+}
+
 h1,
 h2,
 h3,
@@ -54,7 +68,6 @@ h4 {
 	line-height: 1.25;
 	margin-bottom: 0.75rem;
 }
-
 h1 {
 	font-size: 3rem;
 }
@@ -68,8 +81,8 @@ h4 {
 	font-size: 0.875rem;
 }
 p {
-	margin-bottom: 1.25rem;
-	color: slategray;
+	margin-bottom: 1.2rem;
+	color: slategrey;
 }
 
 @media screen and (min-width: 800px) {
@@ -94,313 +107,4 @@ p {
 	h4 {
 		line-height: 1;
 	}
-}
-
-/*
-=============== 
-global classes 
-===============
-*/
-
-/* section */
-.section {
-	width: 90vw;
-	margin: 0 auto;
-	max-width: 1170px;
-}
-
-@media screen and (min-width: 992px) {
-	.section {
-		width: 95vw;
-	}
-}
-
-/* button, input and textarea */
-/* ============================== */
-
-button {
-	background-color: #073b4c;
-	height: 3vh;
-	width: 10vw;
-	color: #ebebeb;
-	margin: 5px;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
-button:hover {
-	background-color: #ef476f;
-}
-
-button:disabled {
-	background-color: lightslategray;
-	cursor: not-allowed;
-}
-
-input:focus,
-textarea:focus {
-	outline: none;
-	border: 2px solid #ef476f;
-}
-
-/*
-=============== 
-Navbar
-===============
-*/
-
-nav {
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-	border-bottom: lightgrey 1px solid;
-}
-.nav-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 1rem;
-}
-
-.nav-toggle {
-	font-size: 1.5rem;
-	color: #15ade0;
-	background: transparent;
-	border-color: transparent;
-	transition: all 0.3s linear;
-	cursor: pointer;
-}
-
-.nav-toggle:hover {
-	color: #073b4c;
-	transform: rotate(90deg);
-}
-
-.logo-focus {
-	font-family: "Righteous", cursive;
-	color: #073b4c;
-}
-
-.logo-diary {
-	font-family: "Great Vibes", cursive;
-	font-weight: 100;
-	color: #15ade0;
-}
-
-.links a {
-	color: #073b4c;
-	font-size: 1rem;
-	text-transform: capitalize;
-	display: block;
-	padding: 0.5rem 1rem;
-	transition: all 0.3s linear;
-}
-.links a:hover {
-	background: #ebebeb;
-	color: #ef476f;
-	padding-left: 1.5rem;
-}
-.links-container {
-	height: 0;
-	overflow: hidden;
-	transition: all 0.3s linear;
-}
-.show-container {
-	height: 10rem;
-}
-
-@media screen and (min-width: 800px) {
-	.nav-center {
-		max-width: 1170px;
-		margin: 0 auto;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 1rem;
-	}
-	.nav-header {
-		padding: 0;
-	}
-	.nav-toggle {
-		display: none;
-	}
-	.links-container {
-		height: auto !important;
-	}
-	.links {
-		display: flex;
-	}
-	.links a {
-		padding: 0;
-		margin: 0 0.5rem;
-	}
-	.links a:hover {
-		padding: 0;
-		background: transparent;
-	}
-}
-
-/*
-=============== 
-Home
-===============
-*/
-
-.content {
-	max-width: 600px;
-	margin: 40px auto;
-	padding: 20px;
-}
-
-.home {
-	display: inline-flex;
-}
-
-/*
-=============== 
-Form
-===============
-*/
-
-.login-form-form {
-	margin-top: 30%;
-}
-
-.diary-form-label {
-	font-family: "Nunito", sans-serif;
-	height: 2vh;
-	width: 10vw;
-	text-align: left;
-}
-
-.diary-form-input {
-	border: 2px solid #15ade0;
-	background-color: #ebebeb;
-	color: lightslategray;
-	height: 2vh;
-	width: 60vw;
-	display: inline-flex;
-	margin-bottom: 5px;
-}
-
-.login-form-label {
-	font-family: "Nunito", sans-serif;
-	height: 2vh;
-	width: 10vw;
-	text-align: left;
-	margin-bottom: 5px;
-}
-
-.login-form-input {
-	border: 2px solid #15ade0;
-	background-color: #ebebeb;
-	color: lightslategray;
-	height: 2vh;
-	width: 20vw;
-	display: inline-flex;
-	margin-bottom: 5px;
-}
-
-.diary-form-longinput {
-	border: 2px solid #15ade0;
-	background-color: #ebebeb;
-	color: lightslategray;
-	height: 30vh;
-	width: 60vw;
-	display: inline-flex;
-}
-
-.mood-icon {
-	margin: 1px;
-	color: lightslategray;
-}
-
-.mood-icon:hover,
-.active.mood-icon {
-	font-size: 20px;
-	color: #ef476f;
-}
-
-/*
-=============== 
-Form > tags
-===============
-*/
-
-.tagslist {
-	display: flex;
-}
-
-.tagslist-item {
-	margin: 2px;
-	border-radius: 5px;
-	border: 1px solid #ef476f;
-}
-
-.tagslist-item.active {
-	background-color: #ef476f;
-	border: 1px solid #ef476f;
-	color: white;
-}
-
-/*
-=============== 
-All diaries
-===============
-*/
-/* .diaries-list {
-	width: 90vw;
-	margin: 5rem 0;
-	max-width: 800px;
-	background: white;
-	border-radius: 0.25rem;
-	padding: 1.5rem 2rem;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-} */
-.diaries-list h3 {
-	font-weight: normal;
-	text-transform: none;
-	margin-bottom: 2rem;
-}
-.diaries-item {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	column-gap: 0.75rem;
-	margin-bottom: 1.5rem;
-	align-items: center;
-	/* border: #ef476f solid 2px; */
-}
-.diaries-item a {
-	/* border: #ef476f solid 2px; */
-	/* color:red; */
-	/* width: 100%; */
-}
-span.diaries-item-mood {
-	/* padding: 100px 100px -10px 0; */
-	font-size: 0250%;
-	line-height: 1.5;
-	display: flex;
-	margin-top: -35px;
-	color: #15ade0;
-}
-.diaries-item h4 {
-	margin-bottom: -5px;
-	display: flex;
-	margin-left: 50px;
-}
-.diaries-item p {
-	margin-bottom: 0;
-	display: flex;
-	margin-left: 50px;
-}
-
-.delete-btn {
-	display: flex;
-	color: #073b4c;
-	background-color: transparent;
-	text-transform: capitalize;
-	font-size: 1.7rem;
-	/* float: right; */
-	cursor: pointer;
-	/* justify-content: right; */
-	/* justify-items: flex-end; */
-	/* border: 0.1rem red solid; */
 }

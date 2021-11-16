@@ -1,0 +1,39 @@
+.main-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	position: absolute;
+}
+
+.sub-section {
+	flex-wrap: wrap;
+}
+
+img.sub-section {
+	max-width: 60vw;
+}
+
+.item-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.login-field {
+	margin-bottom: 5px;
+	display: inline-block;
+}
+input.login-field {
+	background-color: lightcyan;
+}
+button.login-field {
+	color: white;
+	background-color: #15ade0;
+	border-radius: 15px;
+	flex-direction: row;
+}
+
+button.login-field:hover {
+	background-color: #ef476f;
+}

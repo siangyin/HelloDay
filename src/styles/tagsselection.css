@@ -1,0 +1,15 @@
+.tagslist {
+	display: flex;
+}
+
+.tagslist-item {
+	margin: 2px;
+	border-radius: 5px;
+	border: 1px solid #ef476f;
+}
+
+.tagslist-item.active {
+	background-color: #ef476f;
+	border: 1px solid #ef476f;
+	color: white;
+}

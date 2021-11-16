@@ -1,0 +1,39 @@
+.diary-form {
+}
+
+.diary-form-label {
+	text-align: left;
+}
+
+.diary-form-input {
+	border: 2px solid #15ade0;
+	background-color: #ebebeb;
+	color: lightslategray;
+	height: 2vh;
+	width: 60vw;
+	display: inline-flex;
+	margin-bottom: 5px;
+}
+
+.add-btn {
+	color: #15ade0;
+	font-size: 30px;
+	background-color: transparent;
+}
+
+.add-btn:hover {
+	color: #ef476f;
+}
+
+.add-btn:disabled {
+	color: slategrey;
+}
+
+.mood-icon {
+	color: lightslategray;
+}
+
+.mood-icon:hover,
+.active.mood-icon {
+	color: #ef476f;
+}
