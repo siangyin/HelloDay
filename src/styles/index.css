@@ -151,7 +151,7 @@ Navbar
 
 nav {
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-	border-bottom: #073b4c 1px solid;
+	border-bottom: lightgrey 1px solid;
 }
 .nav-header {
 	display: flex;
@@ -339,4 +339,68 @@ Form > tags
 	background-color: #ef476f;
 	border: 1px solid #ef476f;
 	color: white;
+}
+
+/*
+=============== 
+All diaries
+===============
+*/
+/* .diaries-list {
+	width: 90vw;
+	margin: 5rem 0;
+	max-width: 800px;
+	background: white;
+	border-radius: 0.25rem;
+	padding: 1.5rem 2rem;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+} */
+.diaries-list h3 {
+	font-weight: normal;
+	text-transform: none;
+	margin-bottom: 2rem;
+}
+.diaries-item {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	column-gap: 0.75rem;
+	margin-bottom: 1.5rem;
+	align-items: center;
+	/* border: #ef476f solid 2px; */
+}
+.diaries-item a {
+	/* border: #ef476f solid 2px; */
+	/* color:red; */
+	/* width: 100%; */
+}
+span.diaries-item-mood {
+	/* padding: 100px 100px -10px 0; */
+	font-size: 0250%;
+	line-height: 1.5;
+	display: flex;
+	margin-top: -35px;
+	color: #15ade0;
+}
+.diaries-item h4 {
+	margin-bottom: -5px;
+	display: flex;
+	margin-left: 50px;
+}
+.diaries-item p {
+	margin-bottom: 0;
+	display: flex;
+	margin-left: 50px;
+}
+
+.delete-btn {
+	display: flex;
+	color: #073b4c;
+	background-color: transparent;
+	text-transform: capitalize;
+	font-size: 1.7rem;
+	/* float: right; */
+	cursor: pointer;
+	/* justify-content: right; */
+	/* justify-items: flex-end; */
+	/* border: 0.1rem red solid; */
 }

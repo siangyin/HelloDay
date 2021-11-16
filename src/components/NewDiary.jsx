@@ -10,24 +10,25 @@ const randomText = preText[Math.floor(Math.random() * preText.length)];
 // Diary Component function
 const NewDiary = ({ setDailyDiary }) => {
 	// all variables & states...
-
 	const today = new Date();
-	const [tagsList, setTagsList] = useState(tags);
-
-	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
-	const [mood, setMood] = useState(null);
-	const [todayDiaryObj, setTodayDiaryObj] = useState({
+	const blankObj = {
 		date:
 			today.getFullYear() +
 			"-" +
 			(today.getMonth() + 1) +
 			"-" +
 			today.getDate(),
-		mood: mood,
+		mood: null,
 		title: "",
 		story: "",
 		tag: [],
-	});
+	};
+
+	const [tagsList, setTagsList] = useState(tags);
+
+	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
+	const [mood, setMood] = useState(null);
+	const [todayDiaryObj, setTodayDiaryObj] = useState(blankObj);
 
 	// for editing, passing data
 	useEffect(() => {
@@ -75,17 +76,17 @@ const NewDiary = ({ setDailyDiary }) => {
 		}));
 	}
 
+	function handleSubmit(e) {
+		e.preventDefault();
+		setDailyDiary(todayDiaryObj);
+		localStorage.setItem(todayDiaryObj.date, JSON.stringify(todayDiaryObj));
+		setTodayDiaryObj(blankObj);
+		setMood(null);
+	}
+
 	return (
-		<form
-			className="form container"
-			onSubmit={(e) => {
-				e.preventDefault();
-				setDailyDiary(todayDiaryObj);
-				localStorage.setItem(todayDiaryObj.date, JSON.stringify(todayDiaryObj));
-			}}
-		>
+		<form className="form container" onSubmit={handleSubmit}>
 			<Quote />
-			<br />
 
 			<label className="diary-form-label">Date: </label>
 			<input
@@ -95,7 +96,6 @@ const NewDiary = ({ setDailyDiary }) => {
 				value={todayDiaryObj.date}
 				onChange={handleChange}
 			></input>
-			<br />
 
 			<MoodTracker
 				mood={mood}

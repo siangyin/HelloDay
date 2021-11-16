@@ -4,6 +4,7 @@ import Quote from "./Quote";
 import MoodTracker from "./MoodTracker";
 import { tags } from "../Helper/Data";
 import { useParams } from "react-router-dom";
+import TagsDropdown from "./TagsDropdown";
 
 // Diary Component function
 const Diary = ({ setDailyDiary, diary }) => {
@@ -12,6 +13,21 @@ const Diary = ({ setDailyDiary, diary }) => {
 	const { id } = useParams();
 	//retrieving local storage diary by key:date
 	console.log(JSON.parse(window.localStorage.getItem(id)));
+
+	const today = new Date();
+	const blankObj = {
+		date:
+			today.getFullYear() +
+			"-" +
+			(today.getMonth() + 1) +
+			"-" +
+			today.getDate(),
+		mood: null,
+		title: "",
+		story: "",
+		tag: [],
+	};
+
 	const [tagsList, setTagsList] = useState(tags);
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
 	const [mood, setMood] = useState(diary.mood);
@@ -38,28 +54,51 @@ const Diary = ({ setDailyDiary, diary }) => {
 		}));
 	}
 
-	return (
-		<form
-			className="form container"
-			onSubmit={(e) => {
-				e.preventDefault();
-				setDailyDiary(todayDiaryObj);
-				localStorage.setItem(todayDiaryObj.date, JSON.stringify(todayDiaryObj));
-			}}
-		>
-			<Quote />
-			<br />
+	function handleTagsAdding(obj) {
+		todayDiaryObj.tag.push(obj);
+		// revising tags list (to remove selected tags for map)
+		let newTagArr = tags.filter(function (item) {
+			return !todayDiaryObj.tag.includes(item);
+		});
 
-			<h4 className="diary-form-label">Date: </h4>
+		setTagsList(newTagArr);
+	}
+
+	function handleTagsRemoving(obj) {
+		tagsList.push(obj);
+		const sortList = tagsList.sort((a, b) => {
+			return a.label - b.label;
+		});
+
+		setTagsList(sortList);
+
+		let newTagArr = todayDiaryObj.tag.filter((item) => item.id !== obj.id);
+		setTodayDiaryObj((prevState) => ({
+			...prevState,
+			tag: newTagArr,
+		}));
+	}
+
+	function handleSubmit(e) {
+		e.preventDefault();
+		setDailyDiary(todayDiaryObj);
+		localStorage.setItem(todayDiaryObj.date, JSON.stringify(todayDiaryObj));
+		setTodayDiaryObj(blankObj);
+		setMood(null);
+	}
+
+	return (
+		<form className="form container" onSubmit={handleSubmit}>
+			<Quote />
+
+			<label className="diary-form-label">Date: </label>
 			<input
-				required
 				className="diary-form-input"
 				type="date"
 				name="date"
 				value={todayDiaryObj.date}
 				onChange={handleChange}
 			></input>
-			<br />
 
 			<MoodTracker
 				mood={mood}
@@ -67,7 +106,7 @@ const Diary = ({ setDailyDiary, diary }) => {
 				setTodayDiaryObj={setTodayDiaryObj}
 				todayDiaryObj={todayDiaryObj}
 			/>
-			<h4 className="diary-form-label">Title: </h4>
+			<label className="diary-form-label">Title: </label>
 			<input
 				className="diary-form-input"
 				type="text"
@@ -76,18 +115,19 @@ const Diary = ({ setDailyDiary, diary }) => {
 				onChange={handleChange}
 			></input>
 			<br />
+			<TagsDropdown tagsList={tagsList} clickHandler={handleTagsAdding} />
+			<label className="diary-form-label">
+				Tags:
+				{todayDiaryObj.tag && (
+					<TagsDropdown
+						classTag="active"
+						tagsList={todayDiaryObj.tag}
+						clickHandler={handleTagsRemoving}
+					/>
+				)}
+			</label>
 
-			<h4 className="diary-form-label">Tags: </h4>
-			<input
-				className="diary-form-input"
-				type="tag"
-				name="tag"
-				value={todayDiaryObj.tag}
-				onChange={handleChange}
-			></input>
-			<br />
-
-			<h4 className="diary-form-label">Diary: </h4>
+			<label className="diary-form-label">Diary: </label>
 			<textarea
 				className="diary-form-longinput"
 				name="story"
