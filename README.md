@@ -69,15 +69,10 @@ Data needed:
 
 ### App Interface
 
-
-
 <table><tr>
  <td>
 Login page
  <img src="https://github.com/siangyin/focus-diary/blob/main/images/landingpage.png?raw=true"/>
-</td>
- <td>
- <img src="https://github.com/siangyin/MemoryGame/blob/main/images/visualinterface/playpg.png"/>
 </td>
  </tr></table>
 
