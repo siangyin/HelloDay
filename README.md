@@ -45,13 +45,16 @@ Data needed:
 
 ### Wireframe
 
-Landing and routes
+#### Landing and routes
+
 ![Landing and routes](https://github.com/siangyin/focus-diary/blob/main/images/mapping.png?raw=true)
 
-Create New Diary
+#### Create New Diary
+
 ![Create New Diary](https://github.com/siangyin/focus-diary/blob/main/images/NewDiary.png?raw=true)
 
-Accessing Personal Diaries
+#### Accessing Personal Diaries
+
 ![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/AllDiaries.png?raw=true)
 
 ## Project Implementation
