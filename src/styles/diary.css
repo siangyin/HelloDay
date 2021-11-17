@@ -31,9 +31,12 @@
 
 .mood-icon {
 	color: lightslategray;
+	font-size: 20px;
 }
 
 .mood-icon:hover,
 .active.mood-icon {
 	color: #ef476f;
+
+	padding-bottom: -10px;
 }
