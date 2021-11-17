@@ -1,6 +1,6 @@
 # React-Project 2 : Focus Diary
 
-[Demo Link](https://github.com/facebook/create-react-app).
+[Demo App Link](https://focus-diary.netlify.app)
 
 ## Pre-Project Planning
 
