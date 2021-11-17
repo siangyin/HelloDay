@@ -69,9 +69,11 @@ Data needed:
 
 ### App Interface
 
-<table><tr>
+<table>
+
+#### - Login page
+<tr>
  <td>
-Login page
  <img src="https://github.com/siangyin/focus-diary/blob/main/images/landingpage.png?raw=true"/>
 </td>
  </tr></table>
