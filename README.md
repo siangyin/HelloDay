@@ -69,6 +69,8 @@ Data needed:
 - Font Awesome
 - API for [quote](https://type.fit/api/quotes)
 
+### App Interface
+
 ### Challenges
 
 - Getting trouble in passing state object from form submission to Firebase storage
