@@ -10,7 +10,7 @@ Even on a good day, life can be overwhelming. Buzzing phones, work obligations, 
 
 ### Solution
 
-Focus Diaries as like a place where one can record events, experience and even throw anything you want to declutter out from your mind. This digital journal app help to simplify your life by empty what's on your mind at the same time understand ownself better.
+Focus Diary as like a place where one can record events, experience and even throw anything you want to declutter out from your mind. This digital journal app help to simplify your life by empty what's on your mind at the same time understand ownself better.
 
 ## Project Development
 
