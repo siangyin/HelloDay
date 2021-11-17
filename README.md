@@ -46,7 +46,7 @@ Data needed:
 ### Wireframe
 
 Landing and routes
-![Landing and routes](https://github.com/siangyin/focus-diary/blob/master/images/mapping.png)
+![Landing and routes](https://github.com/siangyin/focus-diary/blob/main/images/mapping.png?raw=true)
 
 Create New Diary
 ![Create New Diary](https://github.com/siangyin/focus-diary/blob/master/images/NewDiary.png)
