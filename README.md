@@ -71,6 +71,22 @@ Data needed:
 
 ### App Interface
 
+#### - Landing and routes
+
+![Landing and routes](https://github.com/siangyin/focus-diary/blob/main/images/landingpage.png?raw=true)
+
+#### - Create New Diary
+
+![Create New Diary](https://github.com/siangyin/focus-diary/blob/main/images/newdiarypage.png?raw=true)
+
+#### - Accessing Personal Diaries
+
+![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true)
+
+#### - Mobile interface
+
+![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/mobile.png?raw=true)
+
 ### Challenges
 
 - Getting trouble in passing state object from form submission to Firebase storage

@@ -88,7 +88,7 @@ export default function Home() {
 						></input>
 						<input
 							className="login-field"
-							placeholder="password (at least 6 character)"
+							placeholder="password (min 6 character)"
 							ref={passwordRef}
 							type="password"
 							name="password"
