@@ -119,8 +119,8 @@ Data needed:
 
 ### Learning
 
-- better understanding of react route, and learned to useParam to get dynamic route
-- state management and working with
+- better understanding of react hooks, route. Learned to {useEffect, useState, useRef} in react and {useParams, useNavigate} in react-router-dom. Tried { useAuth, signUp, logOut, logIn } in firebase for user authentification. Has been trying to get storage update in firestore but failed.
+- states management and async functions.
 - API function in useEffect and using cleanup AbortController to cancel previous fetch.
 - to reusing component for different pages and passing dynamic class for odd styling.
 
