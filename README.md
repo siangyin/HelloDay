@@ -45,15 +45,15 @@ Data needed:
 
 ### Wireframe
 
-#### Landing and routes
+#### - Landing and routes
 
 ![Landing and routes](https://github.com/siangyin/focus-diary/blob/main/images/mapping.png?raw=true)
 
-#### Create New Diary
+#### - Create New Diary
 
 ![Create New Diary](https://github.com/siangyin/focus-diary/blob/main/images/NewDiary.png?raw=true)
 
-#### Accessing Personal Diaries
+#### - Accessing Personal Diaries
 
 ![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/AllDiaries.png?raw=true)
 
@@ -67,4 +67,28 @@ Data needed:
 - Axios (for API)
 - Firebase (for Auth login)
 - Font Awesome
-- API for [quote]: (https://type.fit/api/quotes)
+- API for [quote](https://type.fit/api/quotes)
+
+### Challenges
+
+- Getting trouble in passing state object from form submission to Firebase storage
+  Solution: to use local storage for data submission & retrieving.
+
+- Facing lot of error when using state to pass around to different components, and when calling for API.
+  Solution: Setting default/ initial state check and managing all shared states in parent component which is App in my case.
+
+- Had issue of node module which causing the app do not display in localhost (npm start) showing e.g.
+  ,,,
+  Uncaught Error: Cannot find module 'react/jsx-runtime'
+  ,,,
+
+Solution: Delete whole repo content and recreate-react-app and checking each line of code again.
+
+### Learning
+
+- better understanding of react route, and learned to useParam to get dynamic route
+- state management and working with
+- API function in useEffect and using cleanup AbortController to cancel previous fetch.
+- to reusing component for different pages and passing dynamic class for odd styling.
+
+### Possible further improvement
