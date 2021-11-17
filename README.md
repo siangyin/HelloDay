@@ -72,25 +72,36 @@ Data needed:
 <table>
 
 #### - Login page
+
 <tr>
  <td>
  <img src="https://github.com/siangyin/focus-diary/blob/main/images/landingpage.png?raw=true"/>
 </td>
  </tr></table>
 
-![Landing and routes](https://github.com/siangyin/focus-diary/blob/main/images/landingpage.png?raw=true)
+#### - Create new diary entry
 
-#### - Create New Diary
+<tr>
+ <td>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/newdiarypage.png?raw=true"/>
+</td>
+ </tr></table>
 
-![Create New Diary](https://github.com/siangyin/focus-diary/blob/main/images/newdiarypage.png?raw=true)
+#### - Accessing all diaries list
 
-#### - Accessing Personal Diaries
+<tr>
+ <td>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true"/>
+</td>
+ </tr></table>
 
-![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true)
+#### - Sample mobile interface
 
-#### - Mobile interface
-
-![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/mobile.png?raw=true)
+<tr>
+ <td>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile.png?raw=true"/>
+</td>
+ </tr></table>
 
 ### Challenges
 
