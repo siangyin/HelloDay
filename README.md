@@ -77,7 +77,7 @@ Data needed:
  <td>
  <img src="https://github.com/siangyin/focus-diary/blob/main/images/landingpage.png?raw=true"/>
 </td>
- </tr>
+ </tr></table>
 
 #### - Create new diary entry
 
@@ -85,7 +85,7 @@ Data needed:
  <td>
  <img src="https://github.com/siangyin/focus-diary/blob/main/images/newdiarypage.png?raw=true"/>
 </td>
- </tr>
+ </tr></table>
 
 #### - Accessing all diaries list
 
@@ -93,7 +93,7 @@ Data needed:
  <td>
  <img src="https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true"/>
 </td>
- </tr>
+ </tr></table>
 
 #### - Sample mobile interface
 
