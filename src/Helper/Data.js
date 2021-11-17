@@ -24,20 +24,20 @@ export const preText = [
 ];
 
 export const tags = [
-	{ id: 0, label: "family" },
-	{ id: 1, label: "friend" },
-	{ id: 2, label: "love" },
-	{ id: 3, label: "social" },
-	{ id: 4, label: "self-care" },
-	{ id: 5, label: "movie" },
-	{ id: 6, label: "meditation" },
-	{ id: 7, label: "work" },
-	{ id: 8, label: "habit" },
-	{ id: 9, label: "happiness" },
-	{ id: 10, label: "health" },
-	{ id: 11, label: "home" },
-	{ id: 12, label: "fitness" },
-	{ id: 13, label: "finance" },
+	{ id: 1, label: "family" },
+	{ id: 2, label: "friend" },
+	{ id: 3, label: "love" },
+	{ id: 4, label: "social" },
+	{ id: 5, label: "self-care" },
+	{ id: 6, label: "movie" },
+	{ id: 7, label: "meditation" },
+	{ id: 8, label: "work" },
+	{ id: 9, label: "habit" },
+	{ id: 10, label: "happiness" },
+	{ id: 11, label: "health" },
+	{ id: 12, label: "home" },
+	{ id: 13, label: "fitness" },
+	{ id: 14, label: "finance" },
 ];
 
 export const moodIcons = [

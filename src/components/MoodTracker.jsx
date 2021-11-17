@@ -8,6 +8,7 @@ export default function MoodTracker({ setMood, mood, setTodayDiaryObj }) {
 				className="mood-icon"
 				onClick={() => {
 					setMood(icon.id);
+					console.log("mood clicked", icon.id);
 					setTodayDiaryObj((prevState) => ({
 						...prevState,
 						mood: icon.id,
@@ -19,7 +20,7 @@ export default function MoodTracker({ setMood, mood, setTodayDiaryObj }) {
 		);
 	});
 
-	if (mood) {
+	if (mood !== null) {
 		return (
 			<div className="mood-tracker">
 				<p>
