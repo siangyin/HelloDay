@@ -79,6 +79,8 @@ Data needed:
 </td>
  </tr></table>
 
+<table>
+
 #### - Create new diary entry
 
 <tr>
@@ -87,6 +89,8 @@ Data needed:
 </td>
  </tr></table>
 
+<table>
+
 #### - Accessing all diaries list
 
 <tr>
@@ -94,6 +98,8 @@ Data needed:
  <img src="https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true"/>
 </td>
  </tr></table>
+
+<table>
 
 #### - Sample mobile interface
 
