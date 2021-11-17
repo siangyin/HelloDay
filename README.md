@@ -6,13 +6,11 @@
 
 ### Problem
 
-Even on a good day, life can be overwhelming. Buzzing phones, work obligations, family needs, to-do lists, email overload, expectations, illness, invitations and the list goes on for the things that occupy our time. On top of that we have food choices, clothing choices, money worries, and mental and physical health issues that can weigh us down.
-
-Personally, I always get stressed out pretty easily and having alot of inner thought in mind fighting with each other. Some day, I feel energetic and positive but some other day I maybe feeling down and begin to self doubting. By jot down all the thoughts reminding myself are helpful to free the mind and can be like a walk through or reflections from things that happened around me.
+Even on a good day, life can be overwhelming. Buzzing phones, work obligations, family needs, to-do lists, email overload, expectations, illness, invitations and the list goes on for the things that occupy our time. Personally, I always get stressed out pretty easily and having alot of inner thought in mind fighting with each other. Some day, I feel energetic and positive but some other day I maybe feeling down and begin to self doubting. By jot down all the thoughts reminding myself are helpful to free the mind and can be like a walk through or reflections from things that happened around me.
 
 ### Solution
 
-Focus Diaries as like a place where one can record events, experience and even throw anything you want to declutter out from your mind. This digital journal app help to simplfy your life by empty what's on your mind at the same time understand ownself better.
+Focus Diaries as like a place where one can record events, experience and even throw anything you want to declutter out from your mind. This digital journal app help to simplify your life by empty what's on your mind at the same time understand ownself better.
 
 ## Project Development
 
@@ -31,8 +29,8 @@ A user should be able to
 
 Data needed:
 
-- each personal user account
-- Diary entry array object
+- Individual user account
+- Diary form entry array object
   - date
   - mood
   - title
@@ -71,7 +69,17 @@ Data needed:
 
 ### App Interface
 
-#### - Landing and routes
+
+
+<table><tr>
+ <td>
+Login page
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/landingpage.png?raw=true"/>
+</td>
+ <td>
+ <img src="https://github.com/siangyin/MemoryGame/blob/main/images/visualinterface/playpg.png"/>
+</td>
+ </tr></table>
 
 ![Landing and routes](https://github.com/siangyin/focus-diary/blob/main/images/landingpage.png?raw=true)
 
@@ -81,11 +89,11 @@ Data needed:
 
 #### - Accessing Personal Diaries
 
-<kbd>![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true)</kbd>
+![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true)
 
 #### - Mobile interface
 
-<kbd>![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/mobile.png?raw=true)</kbd>
+![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/mobile.png?raw=true)
 
 ### Challenges
 
