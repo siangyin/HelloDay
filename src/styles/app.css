@@ -3,6 +3,10 @@
 Global Class Styles
 ===============
 */
+.App {
+	/* width: 100vw;
+	height: 100vh; */
+}
 
 svg {
 	/* margin: 2px; */
@@ -10,7 +14,7 @@ svg {
 }
 
 .content {
-	min-height: 100vh;
+	/* min-height: 100vh; */
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;

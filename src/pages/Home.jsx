@@ -66,7 +66,9 @@ export default function Home() {
 				<Quote quote={quote} />
 				{currentUser ? (
 					<div className="item-container">
-						<p>{currentUser.email} is logged in</p>
+						<p>
+							<strong>{currentUser.email}</strong> is logged in
+						</p>
 						<button
 							type="button"
 							className="login-field"

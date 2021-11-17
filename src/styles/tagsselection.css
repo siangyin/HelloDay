@@ -1,11 +1,30 @@
-.tagslist {
-	display: flex;
+.subtagsection {
+	/* border: 1px solid #ef476f; */
+	height: 150px;
+	margin-bottom: 10px;
 }
 
+.tagslist {
+	display: flex;
+	/* border: 2px red solid; */
+	width: 350px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+.sub-tag-selected,
+.taglist {
+	height: 65px;
+}
 .tagslist-item {
-	margin: 2px;
+	font-size: smaller;
+	padding: 1px;
+	margin: 1px;
 	border-radius: 5px;
-	border: 1px solid #ef476f;
+	border: 1px solid #15ade0;
 }
 
 .tagslist-item.active {

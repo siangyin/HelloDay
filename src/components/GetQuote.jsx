@@ -31,5 +31,13 @@ export default function GetQuote() {
 		};
 	}, []);
 
-	return <>{quote ? <Quote quote={quote} /> : <h4>Loading quote...</h4>}</>;
+	return (
+		<>
+			{quote ? (
+				<Quote quote={quote} classTag="diary" />
+			) : (
+				<h4>Loading quote...</h4>
+			)}
+		</>
+	);
 }

@@ -15,13 +15,13 @@ export default function AllDiaries({ diaries, handleDelete, handleEdit }) {
 					}}
 				>
 					<header className="diary-info">
+						<p className="diary-date">{obj.date}</p>
 						<span className="diaries-item-mood">
 							{moodIcons[obj.mood].icon}
 						</span>
 						<h4 className="diary-title">
 							{obj.title || `Feeling ${moodIcons[obj.mood].label}`}
 						</h4>
-						<p className="diary-date">{obj.date}</p>
 					</header>
 				</Link>
 				<FaTrash

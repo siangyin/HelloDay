@@ -8,6 +8,9 @@ import { tags } from "../helper/Data";
 import TagsSelection from "../components/TagsSelection";
 
 export default function Diary({ setDailyDiary, diary }) {
+	//retrieving local storage diary by key:date
+	// console.log(JSON.parse(window.localStorage.getItem(id)));
+
 	// all variables & states...
 	const today = new Date();
 	const blankObj = {
@@ -24,15 +27,17 @@ export default function Diary({ setDailyDiary, diary }) {
 	};
 
 	const { id } = useParams();
-	//retrieving local storage diary by key:date
-	console.log(JSON.parse(window.localStorage.getItem(id)));
 
 	// states:
 	const [tagsList, setTagsList] = useState(tags);
 	const [isDisableSubmitBtn, setIsDisableSubmitBtn] = useState(true);
-	const [mood, setMood] = useState(diary.mood);
-	const [todayDiaryObj, setTodayDiaryObj] = useState(diary);
 
+	const [todayDiaryObj, setTodayDiaryObj] = useState(
+		JSON.parse(window.localStorage.getItem(id))
+	);
+	const [mood, setMood] = useState(
+		JSON.parse(window.localStorage.getItem(id)).mood
+	);
 	// useEffect
 	useEffect(() => {
 		if (
@@ -91,18 +96,9 @@ export default function Diary({ setDailyDiary, diary }) {
 
 	return (
 		<div className="diaries-container">
-			<h3>New Diary</h3>
+			<h3>Diary: {todayDiaryObj.date}</h3>
 			<GetQuote />
 			<form className="diary-form" onSubmit={handleSubmit}>
-				<label className="diary-form-label">Date: </label>
-				<input
-					className="diary-form-input"
-					type="date"
-					name="date"
-					value={todayDiaryObj.date}
-					onChange={handleChange}
-				></input>
-
 				<MoodTracker
 					mood={mood}
 					setMood={setMood}
@@ -110,33 +106,33 @@ export default function Diary({ setDailyDiary, diary }) {
 					todayDiaryObj={todayDiaryObj}
 				/>
 
-				<label className="diary-form-label">Title: </label>
 				<input
+					placeholder="title"
 					className="diary-form-input"
 					type="text"
 					name="title"
 					value={todayDiaryObj.title}
 					onChange={handleChange}
 				></input>
-				<br />
-				<label className="diary-form-label">
-					Tags selected:
-					{todayDiaryObj.tag && (
-						<TagsSelection
-							classTag="active"
-							tagsList={todayDiaryObj.tag}
-							clickHandler={handleTagsRemoving}
-						/>
-					)}
-				</label>
-				<label>Tags option:</label>
-				<TagsSelection tagsList={tagsList} clickHandler={handleTagsAdding} />
+
+				<section className="subtagsection">
+					<h5 className="sub-tag-selected">
+						Tags selected:
+						{todayDiaryObj.tag && (
+							<TagsSelection
+								classTag="active"
+								tagsList={todayDiaryObj.tag}
+								clickHandler={handleTagsRemoving}
+							/>
+						)}
+					</h5>
+					<h5 className="sub-tag-option">Tags option:</h5>
+					<TagsSelection tagsList={tagsList} clickHandler={handleTagsAdding} />
+				</section>
 
 				<textarea
 					className="diary-form-longinput"
 					name="story"
-					rows="5"
-					cols="30"
 					placeholder={todayDiaryObj.story}
 					value={todayDiaryObj.story}
 					onChange={handleChange}

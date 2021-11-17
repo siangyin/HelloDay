@@ -22,18 +22,21 @@ export default function MoodTracker({ setMood, mood, setTodayDiaryObj }) {
 	if (mood !== null) {
 		return (
 			<div className="mood-tracker">
-				<p>
-					Mood of the day:
-					<strong className="mood-icon active">{moodIcons[mood].icon}</strong>
-					<strong>{moodIcons[mood].label}</strong>
-				</p>
+				<h5>
+					Mood of the day:{" "}
+					<span>
+						<strong className="mood-icon active">{moodIcons[mood].icon}</strong>
+						<strong>{moodIcons[mood].label}</strong>
+					</span>
+				</h5>
+
 				{listing}
 			</div>
 		);
 	}
 	return (
 		<div className="mood-tracker">
-			<h4>Mood of the day:</h4>
+			<h5>Mood of the day:</h5>
 			{listing}
 		</div>
 	);

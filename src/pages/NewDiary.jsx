@@ -89,18 +89,9 @@ export default function NewDiary({ setDailyDiary }) {
 
 	return (
 		<div className="diaries-container">
-			<h3>New Diary</h3>
+			<h3>Diary: {todayDiaryObj.date}</h3>
 			<GetQuote />
 			<form className="diary-form" onSubmit={handleSubmit}>
-				<label className="diary-form-label">Date: </label>
-				<input
-					className="diary-form-input"
-					type="date"
-					name="date"
-					value={todayDiaryObj.date}
-					onChange={handleChange}
-				></input>
-
 				<MoodTracker
 					mood={mood}
 					setMood={setMood}
@@ -108,33 +99,33 @@ export default function NewDiary({ setDailyDiary }) {
 					todayDiaryObj={todayDiaryObj}
 				/>
 
-				<label className="diary-form-label">Title: </label>
 				<input
+					placeholder="title"
 					className="diary-form-input"
 					type="text"
 					name="title"
 					value={todayDiaryObj.title}
 					onChange={handleChange}
 				></input>
-				<br />
-				<label className="diary-form-label">
-					Tags selected:
-					{todayDiaryObj.tag && (
-						<TagsSelection
-							classTag="active"
-							tagsList={todayDiaryObj.tag}
-							clickHandler={handleTagsRemoving}
-						/>
-					)}
-				</label>
-				<label>Tags option:</label>
-				<TagsSelection tagsList={tagsList} clickHandler={handleTagsAdding} />
+
+				<section className="subtagsection">
+					<h5 className="sub-tag-selected">
+						Tags selected:
+						{todayDiaryObj.tag && (
+							<TagsSelection
+								classTag="active"
+								tagsList={todayDiaryObj.tag}
+								clickHandler={handleTagsRemoving}
+							/>
+						)}
+					</h5>
+					<h5 className="sub-tag-option">Tags option:</h5>
+					<TagsSelection tagsList={tagsList} clickHandler={handleTagsAdding} />
+				</section>
 
 				<textarea
 					className="diary-form-longinput"
 					name="story"
-					rows="5"
-					cols="30"
 					placeholder={randomText}
 					value={todayDiaryObj.story}
 					onChange={handleChange}

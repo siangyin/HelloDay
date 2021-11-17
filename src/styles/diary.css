@@ -1,4 +1,5 @@
 .diary-form {
+	display: inline-block;
 }
 
 .diary-form-label {
@@ -7,12 +8,30 @@
 
 .diary-form-input {
 	border: 2px solid #15ade0;
-	background-color: #ebebeb;
+	background-color: transparent;
+	padding-left: 5px;
 	color: lightslategray;
-	height: 2vh;
-	width: 60vw;
+	height: 30px;
+	width: 350px;
 	display: inline-flex;
 	margin-bottom: 5px;
+}
+
+.diary-form-longinput {
+	width: 350px;
+	height: 100px;
+	border: 2px solid #15ade0;
+	background-color: transparent;
+	padding-left: 5px;
+	color: lightslategray;
+}
+
+.diary-form-input:focus,
+.diary-form-input:focus,
+.diary-form-longinput:focus,
+.diary-form-longinput:focus {
+	outline: none;
+	background-color: #ebebeb;
 }
 
 .add-btn {
@@ -29,14 +48,19 @@
 	color: slategrey;
 }
 
-.mood-icon {
+.mood-tracker {
+	height: 60px;
+	align-content: flex-end;
+}
+
+span.mood-icon {
 	color: lightslategray;
-	font-size: 20px;
+	line-height: 1;
 }
 
 .mood-icon:hover,
 .active.mood-icon {
+	font-size: 20px;
 	color: #ef476f;
-
 	padding-bottom: -10px;
 }

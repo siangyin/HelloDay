@@ -1,26 +1,35 @@
-# Getting Started with Create React App
+# React-Project 2 : Focus Diary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Demo Link](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+##  Pre-Project Planning
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Problem
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Even on a good day, life can be overwhelming. Buzzing phones, work obligations, family needs, to-do lists, email overload, expectations, illness, invitations and the list goes on for the things that occupy our time. On top of that we have food choices, clothing choices, money worries, and mental and physical health issues that can weigh us down.
 
-### `npm test`
+Personally, I always get stressed out pretty easily and having alot of inner thought in mind fighting with each other. Some day, I feel energetic and positive but some other day I maybe feeling down and begin to self doubting.  By jot down all the thoughts reminding myself are helpful to free the mind and can be like a walk through or reflections from things that happened around me. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Solution
 
-### `npm run build`
+Focus Diaries as like a place where one can record events, experience and even throw anything you want to declutter out from your mind. This digital journal app help to simplfy your life by empty what's on your mind at the same time understand ownself better.
 
+## Project Development
+
+### User Story
+
+A user should be able to login to the main application area to:
+- create new diary input
+- access to all his/her diaries for 
+ - viewing
+ - editing
+ - deleting
+
+
+
+### Ideas & App Structures:
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 

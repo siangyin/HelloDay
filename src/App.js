@@ -56,10 +56,10 @@ export default function App() {
 
 	// console.logsssssssssssssssss
 
-	console.log("dailyDiary:", dailyDiary);
-	console.log("diaryEntries:", diaryEntries);
-	console.log("datedEditing:", datedEditing);
-	console.log(diaryEntries[editing]);
+	// console.log("dailyDiary:", dailyDiary);
+	// console.log("diaryEntries:", diaryEntries);
+	// console.log("datedEditing:", datedEditing);
+	// console.log(diaryEntries[editing]);
 
 	return (
 		<Router>

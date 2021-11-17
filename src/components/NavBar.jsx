@@ -60,7 +60,9 @@ export default function NavBar() {
 							</li>
 							<li>
 								<Link to="/">
-									<span onClick={handleLogOut}>Log out</span>
+									<span className="signoutbtn" onClick={handleLogOut}>
+										Log out
+									</span>
 								</Link>
 							</li>
 						</ul>
