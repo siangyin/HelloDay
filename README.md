@@ -111,18 +111,11 @@ Data needed:
 
 ### Challenges
 
-- Getting trouble in passing state object from form submission to Firebase storage
-  Solution: to use local storage for data submission & retrieving.
+- Getting trouble in passing state object from form submission to Firebase storage. Solution: to use local storage for data submission & retrieving.
 
-- Facing lot of error when using state to pass around to different components, and when calling for API.
-  Solution: Setting default/ initial state check and managing all shared states in parent component which is App in my case.
+- Facing lot of error when using state to pass around to different components, and when calling for API. Solution: Setting default/ initial state check and managing all shared states in parent component which is App in my case.
 
-- Had issue of node module which causing the app do not display in localhost (npm start) showing e.g.
-  ,,,
-  Uncaught Error: Cannot find module 'react/jsx-runtime'
-  ,,,
-
-Solution: Delete whole repo content and recreate-react-app and checking each line of code again.
+- Had issue of node module which causing the app do not display in localhost (npm start) showing e.g. Uncaught Error: Cannot find module 'react/jsx-runtime'. Solution: Delete whole repo content and recreate-react-app and checking each line of code again.
 
 ### Learning
 
