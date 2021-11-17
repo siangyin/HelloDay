@@ -81,11 +81,11 @@ Data needed:
 
 #### - Accessing Personal Diaries
 
-![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true)
+<kbd>![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/alldiariespage.png?raw=true)</kbd>
 
 #### - Mobile interface
 
-![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/mobile.png?raw=true)
+<kbd>![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/mobile.png?raw=true)</kbd>
 
 ### Challenges
 
