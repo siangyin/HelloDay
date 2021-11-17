@@ -6,6 +6,10 @@ export default function GetQuote() {
 	const url = "https://type.fit/api/quotes";
 	const [quote, setQuote] = useState("");
 
+	// onClick={() => {
+	// 					navigator.clipboard.writeText(`"${quote.text}" by ${quote.author}`);
+	// 				}}
+
 	function getRandomInt(max) {
 		return Math.floor(Math.random() * max);
 	}

@@ -7,7 +7,9 @@ export default function Quote({ quote, classTag }) {
 	return (
 		<div className={`dailyQuote ${classTag}`}>
 			<FaQuoteLeft />
-			{quote.text}...by {quote.author}
+			<span>
+				{quote.text}...by {quote.author}
+			</span>
 			<FaQuoteRight />
 		</div>
 	);
