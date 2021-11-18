@@ -112,8 +112,14 @@ Data needed:
 ### - Sample mobile interface
 
 <tr>
+<td>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-main.png?raw=true"/>
+</td>
  <td>
- <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile.png?raw=true"/>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-new.png?raw=true"/>
+</td>
+ <td>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-all.png?raw=true"/>
 </td>
  </tr></table>
 
