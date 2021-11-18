@@ -30,7 +30,8 @@ A user should be able to
 
 ## 💡 Ideas & App Structures:
 
-App features: 
+App features:
+
 - new entry
 - edit entries
 - tagging
@@ -113,13 +114,13 @@ Data needed:
 
 <tr>
 <td>
- <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-main.png?raw=true"/>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-main.PNG?raw=true"/>
 </td>
  <td>
- <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-new.png?raw=true"/>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-new.PNG?raw=true"/>
 </td>
  <td>
- <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-all.png?raw=true"/>
+ <img src="https://github.com/siangyin/focus-diary/blob/main/images/mobile-all.PNG?raw=true"/>
 </td>
  </tr></table>
 
