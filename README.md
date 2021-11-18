@@ -141,7 +141,7 @@ Data needed:
 
 ## 💭 Possible further improvement
 
-- theme togle/changing features
+- theme toggle/changing features
 - upload images
 - adding diary by voice audio
 - calender overview
