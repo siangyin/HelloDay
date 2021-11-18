@@ -2,6 +2,11 @@
 
 [Demo App Link](https://focus-diary.netlify.app)
 
+Test account:
+
+- email: test@ga.sg
+- password: 000000
+
 ## Pre-Project Planning
 
 ### Problem
