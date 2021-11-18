@@ -7,19 +7,19 @@ Dummy account:
 - email: test@ga.sg
 - password: 000000
 
-## >> Pre-Project Planning
+### >> Pre-Project Planning
 
-### 😵 Problem
+## 😵 Problem
 
 Even on a good day, life can be overwhelming. Buzzing phones, work obligations, family needs, to-do lists, email overload, expectations, illness, invitations and the list goes on for the things that occupy our time. Personally, I always get stressed out pretty easily and having alot of inner thought in mind fighting with each other. Some day, I feel energetic and positive but some other day I maybe feeling down and begin to self doubting. By jot down all the thoughts reminding myself are helpful to free the mind and can be like a walk through or reflections from things that happened around me.
 
-### 💡 Solution
+## 💡 Solution
 
 Focus Diary as like a place where one can record events, experience and even throw anything you want to declutter out from your mind. This digital journal app help to simplify your life by empty what's on your mind at the same time understand ownself better.
 
-## >> Project Development
+### >> Project Development
 
-### 👤 User Story
+## 👤 User Story
 
 A user should be able to
 
@@ -30,7 +30,7 @@ A user should be able to
 - editing
 - deleting
 
-### 💡 Ideas & App Structures:
+## 💡 Ideas & App Structures:
 
 Data needed:
 
@@ -46,23 +46,23 @@ Data needed:
 - Mood list
 - Daily quote
 
-### 🖼 Wireframe
+## 🖼 Wireframe
 
-#### - Landing and routes
+### - Landing and routes
 
 ![Landing and routes](https://github.com/siangyin/focus-diary/blob/main/images/mapping.png?raw=true)
 
-#### - Create New Diary
+### - Create New Diary
 
 ![Create New Diary](https://github.com/siangyin/focus-diary/blob/main/images/NewDiary.png?raw=true)
 
-#### - Accessing Personal Diaries
+### - Accessing Personal Diaries
 
 ![Accessing Personal Diaries](https://github.com/siangyin/focus-diary/blob/main/images/AllDiaries.png?raw=true)
 
-## >> Project Implementation
+# >> Project Implementation
 
-### 🚀 Technologies & Dependencies Used
+## 🚀 Technologies & Dependencies Used
 
 - HTML
 - CSS
@@ -72,11 +72,11 @@ Data needed:
 - Font Awesome
 - API for [quote](https://type.fit/api/quotes)
 
-### 📸 App Screenshots
+## 📸 App Screenshots
 
 <table>
 
-#### - Login page
+### - Login page
 
 <tr>
  <td>
@@ -86,7 +86,7 @@ Data needed:
 
 <table>
 
-#### - Create new diary entry
+### - Create new diary entry
 
 <tr>
  <td>
@@ -96,7 +96,7 @@ Data needed:
 
 <table>
 
-#### - Accessing all diaries list
+### - Accessing all diaries list
 
 <tr>
  <td>
@@ -106,7 +106,7 @@ Data needed:
 
 <table>
 
-#### - Sample mobile interface
+### - Sample mobile interface
 
 <tr>
  <td>
@@ -114,7 +114,7 @@ Data needed:
 </td>
  </tr></table>
 
-### 🚧 Challenges
+## 🚧 Challenges
 
 - Getting trouble in passing state object from form submission to Firebase storage. Solution: to use local storage for data submission & retrieving.
 
@@ -122,11 +122,16 @@ Data needed:
 
 - Had issue of node module which causing the app do not display in localhost (npm start) showing e.g. Uncaught Error: Cannot find module 'react/jsx-runtime'. Solution: Delete whole repo content and recreate-react-app and checking each line of code again.
 
-### 📖 Learning
+## 📖 Learning
 
 - better understanding of react hooks, route. Learned to {useEffect, useState, useRef} in react and {useParams, useNavigate} in react-router-dom. Tried { useAuth, signUp, logOut, logIn } in firebase for user authentification. Has been trying to get storage update in firestore but failed.
 - states management and async functions.
 - API function in useEffect and using cleanup AbortController to cancel previous fetch.
 - to reusing component for different pages and passing dynamic class for odd styling.
 
-### 💭 Possible further improvement
+## 💭 Possible further improvement
+
+- theme togle/changing features
+- upload images
+- adding diary by voice audio
+- calender overview
