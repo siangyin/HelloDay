@@ -7,8 +7,6 @@ Dummy account:
 - email: test@ga.sg
 - password: 000000
 
-### >> Pre-Project Planning
-
 ## 😵 Problem
 
 Even on a good day, life can be overwhelming. Buzzing phones, work obligations, family needs, to-do lists, email overload, expectations, illness, invitations and the list goes on for the things that occupy our time. Personally, I always get stressed out pretty easily and having alot of inner thought in mind fighting with each other. Some day, I feel energetic and positive but some other day I maybe feeling down and begin to self doubting. By jot down all the thoughts reminding myself are helpful to free the mind and can be like a walk through or reflections from things that happened around me.
@@ -17,7 +15,7 @@ Even on a good day, life can be overwhelming. Buzzing phones, work obligations, 
 
 Focus Diary as like a place where one can record events, experience and even throw anything you want to declutter out from your mind. This digital journal app help to simplify your life by empty what's on your mind at the same time understand ownself better.
 
-### >> Project Development
+# >> Pre-Project Planning & Project Development
 
 ## 👤 User Story
 
@@ -31,6 +29,11 @@ A user should be able to
 - deleting
 
 ## 💡 Ideas & App Structures:
+
+App features: 
+- new entry
+- edit entries
+- tagging
 
 Data needed:
 
