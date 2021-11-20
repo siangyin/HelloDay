@@ -13,6 +13,8 @@ Even on a good day, life can be overwhelming. Buzzing phones, work obligations, 
 
 <img src="https://us.123rf.com/450wm/zdeneksasek/zdeneksasek1706/zdeneksasek170600111/80491764-cartoon-vector-of-angel-and-devil-fighting-arguing-disputing-about-the-man-in-background-and-pointin.jpg?ver=6">
 
+<img src="https://images.squarespace-cdn.com/content/v1/5b007a72af2096a0811728a4/1526761839382-1YA9TQYRTI1BDT9SLW0C/mental-health-3350778_1280.png?format=1000w">
+
 ## 💡 Solution
 
 Focus Diary as like a place where one can record events, experience and even throw anything you want to declutter out from your mind. This digital journal app help to simplify your life by empty what's on your mind at the same time understand ownself better.
