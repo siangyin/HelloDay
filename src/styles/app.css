@@ -10,7 +10,8 @@ Global Class Styles
 
 svg {
 	/* margin: 2px; */
-	padding: 2px;
+	/* padding: 2px; */
+	/* padding-right: 2px; */
 }
 
 .content {
@@ -18,4 +19,11 @@ svg {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
+}
+
+.subtitle {
+	/* border: 0.4px solid #4b6370; */
+	display: block;
+	width: 90vw;
+	margin-bottom: 15px;
 }

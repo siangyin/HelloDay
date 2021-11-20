@@ -1,5 +1,6 @@
 .diary-form {
 	display: inline-block;
+	/* border: 2px solid #15ade0; */
 }
 
 .diary-form-label {
@@ -7,20 +8,22 @@
 }
 
 .diary-form-input {
-	border: 2px solid #15ade0;
+	border: 1.5px solid #15ade0;
+	border-radius: 5px;
 	background-color: transparent;
 	padding-left: 5px;
 	color: lightslategray;
 	height: 30px;
-	width: 350px;
+	width: 70vw;
 	display: inline-flex;
 	margin-bottom: 5px;
 }
 
 .diary-form-longinput {
-	width: 350px;
+	width: 70vw;
 	height: 100px;
-	border: 2px solid #15ade0;
+	border: 1.5px solid #15ade0;
+	border-radius: 5px;
 	background-color: transparent;
 	padding-left: 5px;
 	color: lightslategray;

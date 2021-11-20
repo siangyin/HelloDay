@@ -36,7 +36,7 @@ export default function AllDiaries({ diaries, handleDelete, handleEdit }) {
 
 	return (
 		<div className="diaries-container">
-			<h3>All diaries</h3>
+			<h3 className="subtitle">All diaries</h3>
 			<section className="listing"> {listing} </section>
 		</div>
 	);

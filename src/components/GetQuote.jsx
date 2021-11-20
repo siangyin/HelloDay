@@ -40,7 +40,7 @@ export default function GetQuote() {
 			{quote ? (
 				<Quote quote={quote} classTag="diary" />
 			) : (
-				<h4>Loading quote...</h4>
+				<h4 className="dailyQuote diary">Loading quote...</h4>
 			)}
 		</>
 	);

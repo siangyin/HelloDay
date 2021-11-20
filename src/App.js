@@ -47,11 +47,6 @@ export default function App() {
 		}
 
 		retrievingLocalStorage();
-
-		if (dailyDiary) {
-			const index = diaryEntries.findIndex((e) => e.date === dailyDiary.date);
-			console.log(index);
-		}
 	}, [dailyDiary]);
 
 	// console.logsssssssssssssssss

@@ -89,7 +89,7 @@ export default function NewDiary({ setDailyDiary }) {
 
 	return (
 		<div className="diaries-container">
-			<h3>Diary: {todayDiaryObj.date}</h3>
+			<h3 className="subtitle">Diary: {todayDiaryObj.date}</h3>
 			<GetQuote />
 			<form className="diary-form" onSubmit={handleSubmit}>
 				<MoodTracker

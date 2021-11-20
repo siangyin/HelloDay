@@ -4,6 +4,7 @@
 }
 
 .diary.dailyQuote {
-	margin: 10px 0px 10px 0px;
-	width: 350px;
+	margin: 0px 0px 10px 0px;
+	width: 70vw;
+	height: 10vh;
 }
